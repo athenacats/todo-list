@@ -1,4 +1,4 @@
-export default function sidePanel() {
+export default function sidePanelFunction() {
   const sidePanel = document.querySelector(".sidePanel");
 
   const topPanel = document.createElement("div");
