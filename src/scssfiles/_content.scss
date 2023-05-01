@@ -5,15 +5,31 @@
 
   .sidePanel {
     background-color: $sidePanel;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: 88vh;
+    display: grid;
+    grid-template-rows: 3fr 6fr 1fr;
     color: $tertiary;
     .topPanel {
       display: flex;
       flex-direction: column;
       > * {
         display: flex;
+        cursor: pointer;
+        padding-top: 14px;
+      }
+    }
+    .bottomPanel {
+      > * {
+        padding-top: 20px;
+      }
+    }
+    button {
+      background-color: $sidePanel;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      svg.feather.feather-plus-square {
+        height: 100%;
       }
     }
   }
