@@ -26,4 +26,32 @@ export default function sidePanelFunction() {
   text2.textContent = "Today";
   today.appendChild(text2);
   topPanel.appendChild(today);
+
+  const upcoming = document.createElement("div");
+  today.setAttribute("id", "upcoming");
+  const icon3 = document.createElement("div");
+  icon3.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>';
+  upcoming.appendChild(icon3);
+  const text3 = document.createElement("h3");
+  text3.textContent = "Upcoming";
+  upcoming.appendChild(text3);
+  topPanel.appendChild(upcoming);
+
+  const bottomPanel = document.createElement("div");
+  bottomPanel.classList.add("bottomPanel");
+  sidePanel.appendChild(bottomPanel);
+
+  const projects = document.createElement("div");
+  projects.setAttribute("id", "projects");
+  bottomPanel.appendChild(projects);
+  const projectsTitle = document.createElement("h2");
+  projectsTitle.textContent = "Projects";
+  projects.appendChild(projectsTitle);
+
+  const addButton = document.createElement("button");
+  addButton.setAttribute("id", "addButton");
+  addButton.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>';
+  sidePanel.appendChild(addButton);
 }
