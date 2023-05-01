@@ -5,10 +5,13 @@ export default function startPage() {
   container.classList.add("container");
   body.appendChild(container);
 
-  const header = document.createElement("h1");
+  const header = document.createElement("div");
   header.classList.add("header");
-  header.textContent = "To-Do List";
   container.appendChild(header);
+
+  const title = document.createElement("h1");
+  title.textContent = "To-Do List";
+  header.appendChild(title);
 
   const lightModeToggle = document.createElement("button");
   lightModeToggle.setAttribute("id", "lightModeToggle");

@@ -1,0 +1,22 @@
+.header {
+  background-color: $primary;
+  color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  button {
+    justify-self: end;
+    outline: none;
+    background-color: $primary;
+    border: none;
+  }
+  svg {
+    height: 1.5rem;
+
+    path {
+      fill: $secondary;
+    }
+  }
+}
