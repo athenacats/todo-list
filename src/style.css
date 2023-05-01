@@ -27,6 +27,16 @@
   fill: white;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  width: 100%;
+  height: 100%;
+}
+.content .sidePanel {
+  background-color: rgb(240, 186, 195);
+}
+
 body {
   font-family: "Lora", Georgia, serif;
 }/*# sourceMappingURL=style.css.map */
