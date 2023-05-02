@@ -28,6 +28,9 @@
       outline: none;
       border: none;
       cursor: pointer;
+      font-family: $fonts;
+      color: $tertiary;
+      font-size: 1rem;
       svg.feather.feather-plus-square {
         height: 100%;
       }
