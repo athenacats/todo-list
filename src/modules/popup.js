@@ -31,26 +31,33 @@ export default function taskPopUp() {
   const controls = document.createElement("div");
   popupForm.appendChild(controls);
 
-  const datelabel = document.createElement("label");
-  datelabel.setAttribute("for", "duedate");
-  datelabel.textContent = "Due Date";
-  controls.appendChild(datelabel);
+  const dateLabel = document.createElement("label");
+  dateLabel.setAttribute("for", "duedate");
+  dateLabel.textContent = "Due Date";
+  controls.appendChild(dateLabel);
 
-  const datepicker = document.createElement("input");
-  datepicker.setAttribute("type", "date");
-  datepicker.setAttribute("id", "duedate");
-  datepicker.setAttribute("name", "duedate");
-  datepicker.setAttribute("placeholder", "Today");
-  datepicker.setAttribute("onfocus", "(this.type='date')");
-  datepicker.setAttribute("onfocus", "(this.type='date')");
-  controls.appendChild(datepicker);
+  const datePicker = document.createElement("input");
+  datePicker.setAttribute("type", "date");
+  datePicker.setAttribute("id", "duedate");
+  datePicker.setAttribute("name", "duedate");
+  datePicker.setAttribute("placeholder", "Today");
+  datePicker.setAttribute("onfocus", "(this.type='date')");
+  datePicker.setAttribute("onfocus", "(this.type='date')");
+  controls.appendChild(datePicker);
 
-  const prioritylabel = document.createElement("label");
-  prioritylabel.setAttribute("for", "priority");
-  prioritylabel.textContent = "Priority Level";
-  controls.appendChild(prioritylabel);
+  const priorityLabel = document.createElement("label");
+  priorityLabel.setAttribute("for", "priority");
+  priorityLabel.textContent = "Priority Level";
+  controls.appendChild(priorityLabel);
 
-  const prioritypicker = document.createElement("select");
+  const priorityPicker = document.createElement("select");
+  priorityPicker.setAttribute("id", "priority");
+  priorityPicker.setAttribute("name", "priority");
+  priorityPicker.setAttribute("onchange", "updatePriority(this.value)");
+  priorityPicker.setAttribute("onfocus", "(this.type='select')");
+  controls.appendChild(priorityPicker);
+
+  const timePicker = document.createElement("select");
   prioritypicker.setAttribute("id", "priority");
   prioritypicker.setAttribute("name", "priority");
   prioritypicker.setAttribute("onchange", "updatePriority(this.value)");
