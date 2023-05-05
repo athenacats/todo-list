@@ -92,7 +92,7 @@ export default function taskPopUp() {
   popupForm.appendChild(buttonBox);
 
   const button = document.createElement("button");
-  button.setAttribute("type", "button");
+  button.setAttribute("type", "submit");
   button.setAttribute("id", "submit");
   button.setAttribute("onclick", "submitForm()");
   button.textContent = "Submit";
@@ -100,7 +100,7 @@ export default function taskPopUp() {
 
   const cancelButton = document.createElement("button");
   cancelButton.setAttribute("type", "button");
-  cancelButton.setAttribute("id", "submit");
+  cancelButton.setAttribute("id", "cancel");
   cancelButton.textContent = "Cancel";
   cancelButton.setAttribute("onclick", "cancelForm()");
   buttonBox.appendChild(cancelButton);

@@ -72,6 +72,7 @@
   z-index: 10;
   width: 100%;
   height: 300px;
+  font-family: "Lora", Georgia, serif;
 }
 .popup form {
   width: 70%;
@@ -82,8 +83,22 @@
   border-radius: 12px;
   box-shadow: 0 0 16px 8px rgb(179, 68, 87);
 }
-.popup form .buttonBox button {
+.popup form button {
+  width: 20%;
+  outline: none;
+  border: 1px solid rgb(240, 186, 195);
+  border-radius: 16px;
+  font-family: "Lora", Georgia, serif;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.popup form #submit {
   background-color: rgb(179, 68, 87);
+  color: white;
+}
+.popup form #cancel {
+  background-color: rgb(129, 111, 114);
 }
 
 body {
