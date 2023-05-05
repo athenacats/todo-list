@@ -23,8 +23,7 @@ export default function taskPopUp() {
   popupTitle.setAttribute("name", "Title");
   popupForm.appendChild(popupTitle);
 
-  const popupDescription = document.createElement("input");
-  popupDescription.setAttribute("type", "text");
+  const popupDescription = document.createElement("textarea");
   popupDescription.setAttribute("id", "popupDescription");
   popupDescription.setAttribute("maxlength", "140");
   popupDescription.setAttribute("placeholder", "Description");
