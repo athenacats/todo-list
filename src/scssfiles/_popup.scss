@@ -15,6 +15,13 @@
     margin-right: auto;
     border-radius: 12px;
     box-shadow: 0 0 16px 8px $primary;
+    display: flex;
+    flex-direction: column;
+    input {
+      background-color: $formbackground;
+      outline: none;
+      border: none;
+    }
     button {
       width: 20%;
       outline: none;
