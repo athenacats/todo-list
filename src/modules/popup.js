@@ -45,6 +45,20 @@ export default function taskPopUp() {
   datePicker.setAttribute("onfocus", "(this.type='date')");
   controls.appendChild(datePicker);
 
+  const timeLabel = document.createElement("label");
+  timeLabel.setAttribute("for", "time");
+  timeLabel.textContent = "Time";
+  controls.appendChild(timeLabel);
+
+  const timePicker = document.createElement("input");
+  timePicker.setAttribute("type", "time");
+  timePicker.setAttribute("id", "duetime");
+  timePicker.setAttribute("name", "duetime");
+  timePicker.setAttribute("placeholder", "now");
+  timePicker.setAttribute("onfocus", "(this.type='time')");
+  timePicker.setAttribute("onfocus", "(this.type='time')");
+  controls.appendChild(timePicker);
+
   const priorityLabel = document.createElement("label");
   priorityLabel.setAttribute("for", "priority");
   priorityLabel.textContent = "Priority Level";
@@ -57,27 +71,20 @@ export default function taskPopUp() {
   priorityPicker.setAttribute("onfocus", "(this.type='select')");
   controls.appendChild(priorityPicker);
 
-  const timePicker = document.createElement("select");
-  prioritypicker.setAttribute("id", "priority");
-  prioritypicker.setAttribute("name", "priority");
-  prioritypicker.setAttribute("onchange", "updatePriority(this.value)");
-  prioritypicker.setAttribute("onfocus", "(this.type='select')");
-  controls.appendChild(prioritypicker);
-
   const option1 = document.createElement("option");
   option1.setAttribute("value", "1");
   option1.textContent = "Low";
-  prioritypicker.appendChild(option1);
+  priorityPicker.appendChild(option1);
 
   const option2 = document.createElement("option");
   option2.setAttribute("value", "2");
   option2.textContent = "Medium";
-  prioritypicker.appendChild(option2);
+  priorityPicker.appendChild(option2);
 
   const option3 = document.createElement("option");
   option3.setAttribute("value", "3");
   option3.textContent = "High";
-  prioritypicker.appendChild(option3);
+  priorityPicker.appendChild(option3);
 
   const button = document.createElement("button");
 }
