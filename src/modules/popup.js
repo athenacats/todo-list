@@ -18,6 +18,7 @@ export default function taskPopUp() {
   const popupTitle = document.createElement("input");
   popupTitle.setAttribute("type", "text");
   popupTitle.setAttribute("id", "popupTitle");
+  popupTitle.setAttribute("maxlength", "50");
   popupTitle.setAttribute("placeholder", "Title");
   popupTitle.setAttribute("name", "Title");
   popupForm.appendChild(popupTitle);
@@ -25,6 +26,7 @@ export default function taskPopUp() {
   const popupDescription = document.createElement("input");
   popupDescription.setAttribute("type", "text");
   popupDescription.setAttribute("id", "popupDescription");
+  popupDescription.setAttribute("maxlength", "140");
   popupDescription.setAttribute("placeholder", "Description");
   popupForm.appendChild(popupDescription);
 
