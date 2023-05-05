@@ -29,6 +29,7 @@ export default function taskPopUp() {
   popupForm.appendChild(popupDescription);
 
   const controls = document.createElement("div");
+  controls.classList.add("controls");
   popupForm.appendChild(controls);
 
   const dateLabel = document.createElement("label");
@@ -87,17 +88,20 @@ export default function taskPopUp() {
   priorityPicker.appendChild(option3);
 
   const buttonBox = document.createElement("div");
+  buttonBox.classList.add("buttonBox");
   popupForm.appendChild(buttonBox);
 
   const button = document.createElement("button");
   button.setAttribute("type", "button");
   button.setAttribute("id", "submit");
   button.setAttribute("onclick", "submitForm()");
+  button.textContent = "Submit";
   buttonBox.appendChild(button);
 
   const cancelButton = document.createElement("button");
   cancelButton.setAttribute("type", "button");
   cancelButton.setAttribute("id", "submit");
+  cancelButton.textContent = "Cancel";
   cancelButton.setAttribute("onclick", "cancelForm()");
   buttonBox.appendChild(cancelButton);
 }

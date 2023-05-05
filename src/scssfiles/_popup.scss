@@ -14,5 +14,8 @@
     margin-right: auto;
     border-radius: 12px;
     box-shadow: 0 0 16px 8px $primary;
+    .buttonBox button {
+      background-color: $primary;
+    }
   }
 }

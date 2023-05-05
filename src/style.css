@@ -82,6 +82,9 @@
   border-radius: 12px;
   box-shadow: 0 0 16px 8px rgb(179, 68, 87);
 }
+.popup form .buttonBox button {
+  background-color: rgb(179, 68, 87);
+}
 
 body {
   font-family: "Lora", Georgia, serif;
