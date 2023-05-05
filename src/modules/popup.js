@@ -86,5 +86,18 @@ export default function taskPopUp() {
   option3.textContent = "High";
   priorityPicker.appendChild(option3);
 
+  const buttonBox = document.createElement("div");
+  popupForm.appendChild(buttonBox);
+
   const button = document.createElement("button");
+  button.setAttribute("type", "button");
+  button.setAttribute("id", "submit");
+  button.setAttribute("onclick", "submitForm()");
+  buttonBox.appendChild(button);
+
+  const cancelButton = document.createElement("button");
+  cancelButton.setAttribute("type", "button");
+  cancelButton.setAttribute("id", "submit");
+  cancelButton.setAttribute("onclick", "cancelForm()");
+  buttonBox.appendChild(cancelButton);
 }
