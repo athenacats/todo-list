@@ -31,6 +31,21 @@
         font-size: 1.2rem;
       }
     }
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: center;
+      padding: 0 10px;
+      #duedate,
+      #duetime,
+      #priority,
+      label,
+      option {
+        font-family: $fonts;
+        color: $tertiary;
+        font-size: 0.8rem;
+      }
+    }
     .buttonBox {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -56,16 +71,6 @@
         justify-self: flex-start;
         margin-left: 5px;
       }
-    }
-
-    #duedate,
-    #duetime,
-    #priority,
-    label,
-    option {
-      font-family: $fonts;
-      color: $tertiary;
-      font-size: 1rem;
     }
   }
 }
