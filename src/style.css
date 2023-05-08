@@ -48,6 +48,11 @@
   cursor: pointer;
   padding-top: 14px;
 }
+.content .sidePanel .bottomPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .content .sidePanel .bottomPanel > * {
   padding-top: 20px;
 }
