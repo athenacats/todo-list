@@ -52,6 +52,22 @@ export default function sidePanelFunction() {
   projectsTitle.textContent = "Projects";
   projects.appendChild(projectsTitle);
 
+  const personal = document.createElement("button");
+  personal.setAttribute("id", "personal");
+  personal.setAttribute("type", "button");
+  const text4 = document.createElement("h3");
+  text4.textContent = "Personal";
+  personal.appendChild(text4);
+  bottomPanel.appendChild(personal);
+
+  const work = document.createElement("button");
+  work.setAttribute("id", "work");
+  work.setAttribute("type", "button");
+  const text5 = document.createElement("h3");
+  text5.textContent = "Work";
+  work.appendChild(text5);
+  bottomPanel.appendChild(work);
+
   const addButton = document.createElement("button");
   addButton.setAttribute("id", "addButton");
   addButton.setAttribute("type", "button");
