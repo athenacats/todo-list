@@ -73,18 +73,24 @@ export default function taskPopUp() {
   controls.appendChild(priorityPicker);
 
   const option1 = document.createElement("option");
+  option1.classList.add("low");
   option1.setAttribute("value", "1");
   option1.textContent = "Low";
+  option1.style.color = "green";
   priorityPicker.appendChild(option1);
 
   const option2 = document.createElement("option");
+  option2.classList.add("medium");
   option2.setAttribute("value", "2");
   option2.textContent = "Medium";
+  option2.style.color = "orange";
   priorityPicker.appendChild(option2);
 
   const option3 = document.createElement("option");
+  option3.classList.add("high");
   option3.setAttribute("value", "3");
   option3.textContent = "High";
+  option3.style.color = "red";
   priorityPicker.appendChild(option3);
 
   const buttonBox = document.createElement("div");
