@@ -15,12 +15,21 @@
     margin-right: auto;
     border-radius: 12px;
     box-shadow: 0 0 16px 8px $primary;
-    display: flex;
-    flex-direction: column;
-    input {
+    display: grid;
+    grid-template-rows: 1fr 4fr 2fr 1fr;
+    textarea {
       background-color: $formbackground;
       outline: none;
+      color: $tertiary;
       border: none;
+      resize: none; //remove the diagonal lines to resize textarea
+      font-family: $fonts;
+      font-size: 1rem;
+      padding: 10px;
+      overflow: hidden;
+      textarea:focus {
+        font-size: 1.2rem;
+      }
     }
     button {
       width: 20%;
@@ -31,6 +40,15 @@
       color: $secondary;
       padding-top: 5px;
       padding-bottom: 5px;
+    }
+    #duedate,
+    #duetime,
+    #priority,
+    label,
+    option {
+      font-family: $fonts;
+      color: $tertiary;
+      font-size: 1rem;
     }
     #submit {
       background-color: $primary;
