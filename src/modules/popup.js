@@ -108,6 +108,16 @@ export default function taskPopUp() {
   cancelButton.setAttribute("type", "button");
   cancelButton.setAttribute("id", "cancel");
   cancelButton.textContent = "Cancel";
-  cancelButton.setAttribute("onclick", "cancelForm()");
+  // cancelButton.setAttribute("onclick", "cancelForm()");
+  // cancelButton.addEventListener
   buttonBox.appendChild(cancelButton);
+
+  function cancelForm() {
+    cancelButton.addEventListener("click", () => {
+      content.style.filter = "none";
+      content.style.webkitFilter = "none";
+      popup.style.display = "none";
+    });
+  }
+  cancelForm();
 }
