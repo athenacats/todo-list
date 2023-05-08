@@ -48,6 +48,11 @@ export default function sidePanelFunction() {
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>';
   sidePanel.appendChild(addButton);
 
+  const tooltip1 = document.createElement("span");
+  tooltip1.classList.add("tooltip");
+  tooltip1.textContent = "Add To Do Item";
+  addButton.appendChild(tooltip1);
+
   const bottomPanel = document.createElement("div");
   bottomPanel.classList.add("bottomPanel");
   sidePanel.appendChild(bottomPanel);
@@ -74,4 +79,16 @@ export default function sidePanelFunction() {
   text5.textContent = "Work";
   work.appendChild(text5);
   bottomPanel.appendChild(work);
+
+  const addProject = document.createElement("button");
+  addProject.setAttribute("id", "addProject");
+  addProject.setAttribute("type", "button");
+  addProject.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>';
+  sidePanel.appendChild(addProject);
+
+  const tooltip2 = document.createElement("span");
+  tooltip2.classList.add("tooltip");
+  tooltip2.textContent = "Add Projects";
+  addProject.appendChild(tooltip2);
 }
