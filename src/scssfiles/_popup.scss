@@ -31,16 +31,33 @@
         font-size: 1.2rem;
       }
     }
-    button {
-      width: 20%;
-      outline: none;
-      border: 1px solid $sidePanel;
-      border-radius: 16px;
-      font-family: $fonts;
-      color: $secondary;
-      padding-top: 5px;
-      padding-bottom: 5px;
+    .buttonBox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 10px;
+      button {
+        width: 50%;
+        outline: none;
+        border: 1px solid $sidePanel;
+        border-radius: 16px;
+        font-family: $fonts;
+        color: $secondary;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      #submit {
+        background-color: $primary;
+        color: $secondary;
+        justify-self: flex-end;
+        margin-right: 5px;
+      }
+      #cancel {
+        background-color: $cancel;
+        justify-self: flex-start;
+        margin-left: 5px;
+      }
     }
+
     #duedate,
     #duetime,
     #priority,
@@ -49,13 +66,6 @@
       font-family: $fonts;
       color: $tertiary;
       font-size: 1rem;
-    }
-    #submit {
-      background-color: $primary;
-      color: $secondary;
-    }
-    #cancel {
-      background-color: $cancel;
     }
   }
 }
