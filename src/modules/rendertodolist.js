@@ -17,6 +17,14 @@ export default function renderTodoList() {
   todoListButton.setAttribute("type", "button");
   todoListItem.appendChild(todoListButton);
 
+  const todoListDueDate = document.createElement("div");
+  todoListDueDate.classList.add("todoListDueDate");
+  todoListItem.appendChild(todoListDueDate);
+
+  const todoListDueTime = document.createElement("div");
+  todoListDueTime.classList.add("todoListDueTime");
+  todoListItem.appendChild(todoListDueTime);
+
   const todoListEdit = document.createElement("svg");
   todoListEdit.classList.add("todoListEdit");
   todoListItem.appendChild(todoListEdit);
