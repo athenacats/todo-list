@@ -20,7 +20,7 @@ export default function taskPopUp() {
 
   const popupTitle = document.createElement("textarea");
   popupTitle.setAttribute("id", "popupTitle");
-  popupTitle.addEventListener("onkeyup", enableSubmit);
+  popupTitle.addEventListener("input", enableSubmit);
   popupTitle.setAttribute("maxlength", "50");
   popupTitle.setAttribute("placeholder", "Title");
   popupTitle.setAttribute("name", "Title");
@@ -45,11 +45,9 @@ export default function taskPopUp() {
   const datePicker = document.createElement("input");
   datePicker.setAttribute("type", "date");
   datePicker.setAttribute("id", "duedate");
-  datePicker.addEventListener("onclick", enableSubmit);
+  datePicker.addEventListener("input", enableSubmit);
   datePicker.setAttribute("name", "duedate");
   datePicker.setAttribute("placeholder", "Today");
-  datePicker.setAttribute("onfocus", "(this.type='date')");
-  datePicker.setAttribute("onfocus", "(this.type='date')");
   datePicker.required = true;
   controls.appendChild(datePicker);
 
@@ -61,11 +59,9 @@ export default function taskPopUp() {
   const timePicker = document.createElement("input");
   timePicker.setAttribute("type", "time");
   timePicker.setAttribute("id", "duetime");
-  timePicker.addEventListener("onclick", enableSubmit);
+  timePicker.addEventListener("input", enableSubmit);
   timePicker.setAttribute("name", "duetime");
   timePicker.setAttribute("placeholder", "now");
-  timePicker.setAttribute("onfocus", "(this.type='time')");
-  timePicker.setAttribute("onfocus", "(this.type='time')");
   timePicker.setAttribute("required", "");
   controls.appendChild(timePicker);
 
@@ -76,7 +72,7 @@ export default function taskPopUp() {
 
   const priorityPicker = document.createElement("select");
   priorityPicker.setAttribute("id", "priority");
-  priorityPicker.setAttribute("onchange", enableSubmit);
+  priorityPicker.setAttribute("change", enableSubmit);
   priorityPicker.setAttribute("name", "priority");
   priorityPicker.required = true;
   // priorityPicker.setAttribute("onchange", "updatePriority(this.value)");
@@ -119,7 +115,9 @@ export default function taskPopUp() {
   button.setAttribute("type", "submit");
   button.setAttribute("id", "submit");
   button.textContent = "Submit";
-  button.addEventListener("click", formActions);
+  button.addEventListener("click", () => {
+    formActions();
+  });
   buttonBox.appendChild(button);
 
   const cancelButton = document.createElement("button");

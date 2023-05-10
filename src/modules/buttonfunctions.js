@@ -1,7 +1,9 @@
 import renderTodoList from "./rendertodolist";
 import createTodoList from "./todolist";
+import enableSubmit from "./formvalidation";
 
 export default function buttonFunctions() {
+  enableSubmit();
   const title = document.querySelector("#popupTitle").value;
   const description = document.querySelector("#popupDescription").value;
   const dueDate = document.querySelector("#duedate").value;
