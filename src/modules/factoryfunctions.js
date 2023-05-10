@@ -29,9 +29,9 @@ export default function formActions() {
 
   const todoList = createTodoList();
 
-  const popupForm = document.querySelector("#popupForm");
+  const popupForm = document.querySelector("#popupForm"); // call eventlistener to form so that preventdefault works
   popupForm.addEventListener(
-    "submit",
+    "submit", // click method only validated first item in form, not all items
     (event) => {
       event.preventDefault();
       const title = document.querySelector("#popupTitle").value;
@@ -44,6 +44,7 @@ export default function formActions() {
       const todoListPriority = document.querySelector(".todoListPriority");
 
       if (priority === "Low") {
+        // set different svg colors for all priority levels
         todoListPriority.innerHTML =
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>';
       } else if (priority === "Medium") {

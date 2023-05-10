@@ -74,7 +74,7 @@ export default function taskPopUp() {
   const priorityPicker = document.createElement("select");
   priorityPicker.setAttribute("id", "priority");
   priorityPicker.setAttribute("name", "priority");
-  priorityPicker.setAttribute("required", "");
+  priorityPicker.required = true;
   // priorityPicker.setAttribute("onchange", "updatePriority(this.value)");
   // priorityPicker.setAttribute("onfocus", "(this.type='select')");
   controls.appendChild(priorityPicker);
