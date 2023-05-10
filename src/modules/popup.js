@@ -1,3 +1,5 @@
+import formActions from "./factoryfunctions";
+
 export default function taskPopUp() {
   const container = document.querySelector(".container");
 
@@ -98,10 +100,10 @@ export default function taskPopUp() {
   popupForm.appendChild(buttonBox);
 
   const button = document.createElement("button");
-  button.setAttribute("type", "submit");
+  button.setAttribute("type", "button");
   button.setAttribute("id", "submit");
-  button.setAttribute("onclick", "submitForm()");
   button.textContent = "Submit";
+  button.addEventListener("click", formActions);
   buttonBox.appendChild(button);
 
   const cancelButton = document.createElement("button");
