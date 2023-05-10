@@ -79,6 +79,13 @@ export default function taskPopUp() {
   // priorityPicker.setAttribute("onfocus", "(this.type='select')");
   controls.appendChild(priorityPicker);
 
+  const optionPlaceholder = document.createElement("option");
+  optionPlaceholder.setAttribute("value", "");
+  optionPlaceholder.setAttribute("disabled", "");
+  optionPlaceholder.setAttribute("selected", "");
+  optionPlaceholder.textContent = "Select";
+  priorityPicker.appendChild(optionPlaceholder);
+
   const option1 = document.createElement("option");
   option1.classList.add("low");
   option1.setAttribute("value", "Low");
