@@ -26,4 +26,17 @@ const createTodoList = () => {
   return { todos, addTodo, removeTodo, toggleTodoCompletion };
 };
 
+const todoList = createTodoList();
+
+const submitButton = document.querySelector("#submit");
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const title = document.querySelector("#popupTitle").value;
+  const description = document.querySelector("#popupDescription").value;
+  const dueDate = document.querySelector("#dueDate").value;
+  const dueTime = document.querySelector("#dueTime").value;
+  const priority = document.querySelector("#priority").value;
+  todoList.addTodo(title, description, dueDate, dueTime, priority);
+});
+
 export { todoitems, createTodoList };
