@@ -3,17 +3,17 @@ export default function enableSubmit() {
   const popupForm = document.querySelector("#popupForm");
   const requiredFields = popupForm.querySelectorAll("[required]");
   let allFilled = true;
-  requiredFields.forEach((field) => {
-    if (!field.value) {
-      allFilled = false;
-    }
-  });
   const submitButton = document.querySelector("#submit");
   if (allFilled) {
     submitButton.removeAttribute("disabled");
   } else {
     submitButton.setAttribute("disabled", "");
   }
+  requiredFields.forEach((field) => {
+    if (!field.value) {
+      allFilled = false;
+    }
+  });
 }
 
 /* document.getElementById("submit").addEventListener("click", () => {
