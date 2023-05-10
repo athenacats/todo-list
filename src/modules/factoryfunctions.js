@@ -38,5 +38,8 @@ export default function formActions() {
     const dueTime = document.querySelector("#duetime").value;
     const priority = document.querySelector("#priority").value;
     todoList.addTodo(title, description, dueDate, dueTime, priority);
+
+    const todoListTitle = document.querySelector(".todoListTitle");
+    todoListTitle.textContent = title;
   });
 }
