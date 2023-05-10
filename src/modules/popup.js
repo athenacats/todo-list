@@ -19,9 +19,11 @@ export default function taskPopUp() {
 
   const popupTitle = document.createElement("textarea");
   popupTitle.setAttribute("id", "popupTitle");
+
   popupTitle.setAttribute("maxlength", "50");
   popupTitle.setAttribute("placeholder", "Title");
   popupTitle.setAttribute("name", "Title");
+  popupTitle.setAttribute("required", "");
   popupForm.appendChild(popupTitle);
 
   const popupDescription = document.createElement("textarea");
@@ -46,6 +48,7 @@ export default function taskPopUp() {
   datePicker.setAttribute("placeholder", "Today");
   datePicker.setAttribute("onfocus", "(this.type='date')");
   datePicker.setAttribute("onfocus", "(this.type='date')");
+  datePicker.required = true;
   controls.appendChild(datePicker);
 
   const timeLabel = document.createElement("label");
@@ -60,6 +63,7 @@ export default function taskPopUp() {
   timePicker.setAttribute("placeholder", "now");
   timePicker.setAttribute("onfocus", "(this.type='time')");
   timePicker.setAttribute("onfocus", "(this.type='time')");
+  timePicker.setAttribute("required", "");
   controls.appendChild(timePicker);
 
   const priorityLabel = document.createElement("label");
@@ -70,6 +74,7 @@ export default function taskPopUp() {
   const priorityPicker = document.createElement("select");
   priorityPicker.setAttribute("id", "priority");
   priorityPicker.setAttribute("name", "priority");
+  priorityPicker.setAttribute("required", "");
   // priorityPicker.setAttribute("onchange", "updatePriority(this.value)");
   // priorityPicker.setAttribute("onfocus", "(this.type='select')");
   controls.appendChild(priorityPicker);
@@ -100,7 +105,7 @@ export default function taskPopUp() {
   popupForm.appendChild(buttonBox);
 
   const button = document.createElement("button");
-  button.setAttribute("type", "button");
+  button.setAttribute("type", "submit");
   button.setAttribute("id", "submit");
   button.textContent = "Submit";
   button.addEventListener("click", formActions);
