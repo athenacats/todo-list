@@ -163,6 +163,32 @@
   margin-left: 5px;
 }
 
+.todoListItem {
+  border-bottom: 1px solid rgb(179, 68, 87);
+  border-radius: 16px;
+  width: 90%;
+  padding: 5px;
+  margin: 5px auto;
+  display: flex;
+  box-shadow: 0 0 8px rgb(179, 68, 87);
+  height: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  color: rgb(22, 4, 22);
+}
+.todoListItem #todoListButton {
+  background-color: rgb(240, 186, 195);
+  font-family: "Lora", Georgia, serif;
+  padding: 3px 16px;
+  border-radius: 16px;
+  color: rgb(22, 4, 22);
+  border: none;
+  outline: none;
+}
+.todoListItem svg {
+  height: 90%;
+}
+
 body {
   font-family: "Lora", Georgia, serif;
 }/*# sourceMappingURL=style.css.map */

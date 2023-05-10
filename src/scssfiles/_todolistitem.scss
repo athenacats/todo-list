@@ -1,0 +1,25 @@
+.todoListItem {
+  border-bottom: 1px solid $primary;
+  border-radius: 16px;
+  width: 90%;
+  padding: 5px;
+  margin: 5px auto;
+  display: flex;
+  box-shadow: 0 0 8px $primary;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  color: $tertiary;
+  #todoListButton {
+    background-color: $sidePanel;
+    font-family: $fonts;
+    padding: 3px 16px;
+    border-radius: 16px;
+    color: $tertiary;
+    border: none;
+    outline: none;
+  }
+  svg {
+    height: 90%;
+  }
+}
