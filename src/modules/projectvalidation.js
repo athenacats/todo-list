@@ -1,7 +1,6 @@
 /* eslint-disable no-plusplus */
 export default function enableProjectSubmit() {
-  const projectPopupForm = document.querySelector("#projectPopupForm");
-  const requiredFields = projectPopupForm.querySelectorAll("[required]");
+  const projectName = document.querySelector("#projectName");
   let allFilled = true;
   const submitButton = document.querySelector("#projectSubmit");
   if (allFilled) {
@@ -9,9 +8,8 @@ export default function enableProjectSubmit() {
   } else {
     submitButton.setAttribute("disabled", "");
   }
-  requiredFields.forEach((field) => {
-    if (!field.value) {
-      allFilled = false;
-    }
-  });
+
+  if (!projectName.value) {
+    allFilled = false;
+  }
 }
