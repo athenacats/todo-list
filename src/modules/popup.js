@@ -1,21 +1,19 @@
 import formActions from "./formActions";
 import enableSubmit from "./formvalidation";
+import cancelForm from "./formcancel";
 
 export default function taskPopUp() {
   const container = document.querySelector(".container");
 
-  const content = document.querySelector(".content");
-  content.style.filter = "blur(20px)";
-  content.style.webkitFilter = "blur(20px)";
-
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.style.filter = "none";
+  popup.style.display = "none";
   container.appendChild(popup);
 
   const popupForm = document.createElement("form");
-  popup.setAttribute("id", "popupForm");
-  popup.setAttribute("name", "popupForm");
+  popupForm.setAttribute("id", "popupForm");
+  popupForm.setAttribute("name", "popupForm");
   popup.appendChild(popupForm);
 
   const popupTitle = document.createElement("textarea");
@@ -124,14 +122,6 @@ export default function taskPopUp() {
   cancelButton.setAttribute("type", "button");
   cancelButton.setAttribute("id", "cancel");
   cancelButton.textContent = "Cancel";
+  cancelButton.addEventListener("click", cancelForm);
   buttonBox.appendChild(cancelButton);
-
-  function cancelForm() {
-    cancelButton.addEventListener("click", () => {
-      content.style.filter = "none";
-      content.style.webkitFilter = "none";
-      popup.style.display = "none";
-    });
-  }
-  cancelForm();
 }

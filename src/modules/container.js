@@ -1,3 +1,5 @@
+import taskPopUp from "./popup";
+
 export default function mainContainer() {
   const container = document.querySelector(".container");
 
@@ -16,4 +18,6 @@ export default function mainContainer() {
   const listTodos = document.createElement("ul");
   listTodos.classList.add("listTodos");
   mainPanel.appendChild(listTodos);
+
+  taskPopUp();
 }
