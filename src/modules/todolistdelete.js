@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-export default function todoListActions() {
+export default function todoListDeleteButton() {
   /* const todoListDeleteButton =
     document.getElementsByClassName("todoListDelete");
   let i;
