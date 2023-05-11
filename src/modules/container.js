@@ -12,4 +12,8 @@ export default function mainContainer() {
   const mainPanel = document.createElement("div");
   mainPanel.classList.add("mainPanel");
   content.appendChild(mainPanel);
+
+  const listTodos = document.createElement("ul");
+  listTodos.classList.add("listTodos");
+  mainPanel.appendChild(listTodos);
 }

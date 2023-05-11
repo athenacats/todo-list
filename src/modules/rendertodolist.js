@@ -1,9 +1,5 @@
 export default function renderTodoList() {
-  const mainPanel = document.querySelector(".mainPanel");
-
-  const listTodos = document.createElement("ul");
-  listTodos.classList.add("listTodos");
-  mainPanel.appendChild(listTodos);
+  const listTodos = document.querySelector(".listTodos");
 
   const todoListItem = document.createElement("li");
   todoListItem.classList.add("todoListItem");
