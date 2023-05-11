@@ -3,9 +3,9 @@ import projectButtonFunctions from "./projectbuttonfunctions";
 export default function projectFormActions() {
   const projectPopupForm = document.querySelector("#projectPopupForm"); // call eventlistener to form so that preventdefault works
   projectPopupForm.addEventListener(
-    "submit", // click method only validated first item in form, not all items
+    "click", // click method only validated first item in form, not all items
     (event) => {
-      event.preventDefault();
+      event.stopImmediatePropagation();
       projectButtonFunctions();
       const content = document.querySelector(".content");
       const projectPopup = document.querySelector(".projectPopup");
