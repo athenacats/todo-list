@@ -7,6 +7,11 @@ export default function formActions() {
     (event) => {
       event.preventDefault();
       buttonFunctions();
+      const content = document.querySelector(".content");
+      const popup = document.querySelector(".popup");
+      content.style.filter = "none";
+      content.style.webkitFilter = "none";
+      popup.style.display = "none";
     },
     true
   );
