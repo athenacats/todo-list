@@ -2,6 +2,7 @@ import renderTodoList from "./rendertodolist";
 import createTodoList from "./todolist";
 import enableSubmit from "./formvalidation";
 import todoListDeleteButton from "./todolistdelete";
+import todoListChecked from "./todolistchecked";
 
 export default function buttonFunctions() {
   enableSubmit();
@@ -29,6 +30,7 @@ export default function buttonFunctions() {
     todoListPriority.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>';
   }
+  todoListPriority.addEventListener("click", todoListChecked);
 
   const todoListTitle = document.querySelector(".todoListTitle");
   todoListTitle.textContent = title;
