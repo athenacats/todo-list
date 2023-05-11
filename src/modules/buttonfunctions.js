@@ -1,6 +1,7 @@
 import renderTodoList from "./rendertodolist";
 import createTodoList from "./todolist";
 import enableSubmit from "./formvalidation";
+// import todoListDeleteButton from "./todolistdelete";
 
 export default function buttonFunctions() {
   enableSubmit();
@@ -13,5 +14,9 @@ export default function buttonFunctions() {
   const todoList = createTodoList();
   todoList.addTodo(title, description, dueDate, dueTime, priority);
 
-  renderTodoList();
+  if (title === "") {
+    // do nothing
+  } else {
+    renderTodoList();
+  }
 }
