@@ -1,4 +1,4 @@
-import formActions from "./factoryfunctions";
+import formActions from "./formActions";
 import enableSubmit from "./formvalidation";
 
 export default function taskPopUp() {
