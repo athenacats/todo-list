@@ -1,4 +1,5 @@
 import taskPopUp from "./popup";
+import projectCreationPopup from "./projectpopup";
 
 export default function mainContainer() {
   const container = document.querySelector(".container");
@@ -20,4 +21,5 @@ export default function mainContainer() {
   mainPanel.appendChild(listTodos);
 
   taskPopUp();
+  projectCreationPopup();
 }
