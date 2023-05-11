@@ -45,7 +45,7 @@ export default function projectCreationPopup() {
 
   const cancelButton = document.createElement("button");
   cancelButton.setAttribute("type", "button");
-  cancelButton.setAttribute("id", "cancel");
+  cancelButton.setAttribute("id", "projectCancel");
   cancelButton.textContent = "Cancel";
   cancelButton.addEventListener("click", projectCancelForm);
   buttonBox.appendChild(cancelButton);
