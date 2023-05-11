@@ -1,8 +1,13 @@
 export default function renderTodoList() {
   const mainPanel = document.querySelector(".mainPanel");
-  const todoListItem = document.createElement("div");
+
+  const listTodos = document.createElement("ul");
+  listTodos.classList.add("listTodos");
+  mainPanel.appendChild(listTodos);
+
+  const todoListItem = document.createElement("li");
   todoListItem.classList.add("todoListItem");
-  mainPanel.appendChild(todoListItem);
+  listTodos.appendChild(todoListItem);
 
   const todoListPriority = document.createElement("svg");
   todoListPriority.classList.add("todoListPriority");

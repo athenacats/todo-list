@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 function todoitems(title, descriprion, dueDate, dueTime, priority) {
   return { title, descriprion, dueDate, dueTime, priority };
 }
@@ -8,7 +9,9 @@ const createTodoList = () => {
   const addTodo = (title, descriprion, dueDate, dueTime, priority) => {
     const newTodo = todoitems(title, descriprion, dueDate, dueTime, priority);
     todos.push(newTodo);
-  }; /* const removeTodo = (index) => {
+  };
+
+  /* const removeTodo = (index) => {
         todos.splice(index, 1);
         renderTodoList();
       }; */
@@ -18,7 +21,10 @@ const createTodoList = () => {
         renderTodoList();
       }; */
 
-  return { todos, addTodo /* removeTodo, toggleTodoCompletion */ };
+  return {
+    todos,
+    addTodo /* removeTodo, toggleTodoCompletion */,
+  };
 };
 
 export default createTodoList;
