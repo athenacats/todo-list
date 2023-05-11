@@ -1,7 +1,6 @@
 import renderTodoList from "./rendertodolist";
 import createTodoList from "./todolist";
 import enableSubmit from "./formvalidation";
-// import todoListDeleteButton from "./todolistdelete";
 
 export default function buttonFunctions() {
   enableSubmit();
