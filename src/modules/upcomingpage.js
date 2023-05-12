@@ -2,6 +2,8 @@
 import { format, addDays, parseISO } from "date-fns";
 
 export default function upcomingPage() {
+  const todayTodos = document.querySelector(".todayTodos");
+  todayTodos.innerHTML = "";
   const today = new Date();
   const dateFormatted = format(today, "yyyy-MM-dd");
   const formattedDate = parseISO(dateFormatted);
@@ -34,17 +36,5 @@ export default function upcomingPage() {
         upcomingTodos.appendChild(todoClones);
       }
     }
-    /* if (todo.textContent === dateFormatted) {
-      todo.parentNode.classList.add("dueToday");
-      const inbox = document.querySelector(".inboxPage");
-      inbox.style.display = "none";
-      const upcoming = document.querySelector(".upcomingPage");
-      upcoming.style.display = "none";
-      const todayPage = document.querySelector(".todayPage");
-      todayPage.style.display = "block";
-      const todayTodos = document.querySelector(".todayTodos");
-      const todoClones = todo.parentNode.cloneNode(true);
-      todayTodos.appendChild(todoClones);
-    } */
   });
 }
