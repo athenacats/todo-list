@@ -3,8 +3,8 @@ export default function inboxPage() {
   todos.forEach((todo) => {
     if (todo.parentNode.classList.contains("dueToday")) {
       todo.parentNode.classList.remove("dueToday");
-      const listTodos = document.querySelector(".listTodos");
-      listTodos.appendChild(todo.parentNode);
+      const todayTodos = document.querySelector(".todayTodos");
+      todayTodos.innerHTML = "";
     }
   });
   const inbox = document.querySelector(".inboxPage");

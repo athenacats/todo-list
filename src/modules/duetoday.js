@@ -19,7 +19,8 @@ export default function dueToday() {
       const todayPage = document.querySelector(".todayPage");
       todayPage.style.display = "block";
       const todayTodos = document.querySelector(".todayTodos");
-      todayTodos.appendChild(todo.parentNode);
+      const todoClones = todo.parentNode.cloneNode(true);
+      todayTodos.appendChild(todoClones);
     }
   });
 }
