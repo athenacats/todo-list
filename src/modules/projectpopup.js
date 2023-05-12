@@ -35,12 +35,10 @@ export default function projectCreationPopup() {
   projectPopupForm.appendChild(buttonBox);
 
   const button = document.createElement("button");
-  button.setAttribute("type", "button");
+  button.setAttribute("type", "button"); // no form validation needed through required tag. Used an if/else statement to check for blank input
   button.setAttribute("id", "projectSubmit");
   button.textContent = "Submit";
-  button.addEventListener("click", () => {
-    projectFormActions();
-  });
+  button.addEventListener("click", projectFormActions);
   buttonBox.appendChild(button);
 
   const cancelButton = document.createElement("button");
