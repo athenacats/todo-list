@@ -14,8 +14,12 @@ export default function dueToday() {
       todo.parentNode.classList.add("dueToday");
       const inbox = document.querySelector(".inboxPage");
       inbox.style.display = "none";
-      const todayPage = document.createElement("div");
+      const upcoming = document.querySelector(".upcomingPage");
+      upcoming.style.display = "none";
+      const todayPage = document.querySelector(".todayPage");
+      todayPage.style.display = "flex";
+      const todayTodos = document.querySelector(".todayTodos");
+      todayTodos.appendChild(todo.parentNode);
     }
   });
-  const dueToday = document.querySelectorAll(".dueToday");
 }
