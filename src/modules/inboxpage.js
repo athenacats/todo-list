@@ -6,6 +6,11 @@ export default function inboxPage() {
       const todayTodos = document.querySelector(".todayTodos");
       todayTodos.innerHTML = "";
     }
+    if (todo.parentNode.classList.contains("dueUpcoming")) {
+      todo.parentNode.classList.remove("dueUpcoming");
+      const upcomingTodos = document.querySelector(".upcomingTodos");
+      upcomingTodos.innerHTML = "";
+    }
   });
   const inbox = document.querySelector(".inboxPage");
   inbox.style.display = "block";
