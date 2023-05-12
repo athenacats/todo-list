@@ -2,13 +2,20 @@ import { format } from "date-fns";
 
 export default function dueToday() {
   const today = new Date();
-  const dateFormatted = format(today, "yyyy-mm-dd");
+  const dateFormatted = format(today, "yyyy-MM-dd");
 
   const todos = document.querySelectorAll(".todoListDueDate");
 
   todos.forEach((todo) => {
-    if (todo.value === dateFormatted) {
-      todo.classList.add("dueToday");
+    if (todo.parentNode.classList.contains("dueToday")) {
+      // do nothing. Ensures no duplicates
+    }
+    if (todo.textContent === dateFormatted) {
+      todo.parentNode.classList.add("dueToday");
+      const inbox = document.querySelector(".inboxPage");
+      inbox.style.display = "none";
+      const todayPage = document.createElement("div");
     }
   });
+  const dueToday = document.querySelectorAll(".dueToday");
 }
