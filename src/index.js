@@ -7,3 +7,6 @@ import "./style.css";
 startPage();
 mainContainer();
 sidePanelFunction();
+
+const date = new Date();
+console.log(date);
