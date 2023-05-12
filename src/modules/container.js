@@ -32,6 +32,14 @@ export default function mainContainer() {
   listTodos.classList.add("listTodos");
   inboxPage.appendChild(listTodos);
 
+  const todayTodos = document.createElement("ul");
+  todayTodos.classList.add("todayTodos");
+  todayPage.appendChild(todayTodos);
+
+  const upcomingTodos = document.createElement("ul");
+  upcomingTodos.classList.add("upcomingTodos");
+  upcomingPage.appendChild(upcomingTodos);
+
   taskPopUp();
   projectCreationPopup();
 }
