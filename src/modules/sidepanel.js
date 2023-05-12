@@ -2,6 +2,7 @@ import displayHidePopup from "./displayhidepopup";
 import createProject from "./createProject";
 import dueToday from "./duetoday";
 import inboxPage from "./inboxpage";
+import upcomingPage from "./upcomingpage";
 
 export default function sidePanelFunction() {
   const sidePanel = document.querySelector(".sidePanel");
@@ -39,6 +40,7 @@ export default function sidePanelFunction() {
   const upcoming = document.createElement("button");
   upcoming.setAttribute("id", "upcoming");
   upcoming.setAttribute("type", "button");
+  upcoming.addEventListener("click", upcomingPage);
   const icon3 = document.createElement("div");
   icon3.innerHTML =
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>';
