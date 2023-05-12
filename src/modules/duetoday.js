@@ -2,7 +2,7 @@ import { format } from "date-fns";
 // experiment
 export default function dueToday() {
   const upcomingTodos = document.querySelector(".upcomingTodos");
-  upcomingTodos.innerHTML = "";
+  const listTodos = document.querySelector(".listTodos");
   const today = new Date();
   const dateFormatted = format(today, "yyyy-MM-dd");
 
@@ -12,6 +12,15 @@ export default function dueToday() {
     if (todo.parentNode.classList.contains("dueToday")) {
       // do nothing. Ensures no duplicates
     }
+    if (todo.parentNode.classList.contains("dueUpcoming")) {
+      upcomingTodos.removeChild(todo.parentNode);
+      listTodos.appendChild(todo.parentNode);
+      todo.parentNode.classList.remove("dueUpcoming");
+    }
+    /* function deleteinterior() {
+      upcomingTodos.innerHTML = "";
+    }
+    deleteinterior(); */
 
     if (todo.textContent === dateFormatted) {
       todo.parentNode.classList.add("dueToday");
@@ -22,8 +31,8 @@ export default function dueToday() {
       const todayPage = document.querySelector(".todayPage");
       todayPage.style.display = "block";
       const todayTodos = document.querySelector(".todayTodos");
-      const todoClones = todo.parentNode.cloneNode(true);
-      todayTodos.appendChild(todoClones);
+      listTodos.removeChild(todo.parentNode);
+      todayTodos.appendChild(todo.parentNode);
     }
   });
 }

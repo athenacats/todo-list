@@ -1,17 +1,22 @@
 export default function inboxPage() {
   const todos = document.querySelectorAll(".todoListDueDate");
-  const upcomingTodos = document.querySelector(".upcomingTodos");
-  upcomingTodos.innerHTML = "";
   const todayTodos = document.querySelector(".todayTodos");
-  todayTodos.innerHTML = "";
+  const upcomingTodos = document.querySelector(".upcomingTodos");
+  const listTodos = document.querySelector(".listTodos");
   todos.forEach((todo) => {
     if (todo.parentNode.classList.contains("dueToday")) {
+      todayTodos.removeChild(todo.parentNode);
+      listTodos.appendChild(todo.parentNode);
       todo.parentNode.classList.remove("dueToday");
-    }
-    if (todo.parentNode.classList.contains("dueUpcoming")) {
+    } else if (todo.parentNode.classList.contains("dueUpcoming")) {
+      upcomingTodos.removeChild(todo.parentNode);
+      listTodos.appendChild(todo.parentNode);
+
       todo.parentNode.classList.remove("dueUpcoming");
     }
   });
+  todayTodos.innerHTML = "";
+  upcomingTodos.innerHTML = "";
   const inbox = document.querySelector(".inboxPage");
   inbox.style.display = "block";
   const upcoming = document.querySelector(".upcomingPage");

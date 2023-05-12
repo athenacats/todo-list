@@ -3,7 +3,7 @@ import { format, addDays, parseISO } from "date-fns";
 
 export default function upcomingPage() {
   const todayTodos = document.querySelector(".todayTodos");
-  todayTodos.innerHTML = "";
+  const listTodos = document.querySelector(".listTodos");
   const today = new Date();
   const dateFormatted = format(today, "yyyy-MM-dd");
   const formattedDate = parseISO(dateFormatted);
@@ -22,6 +22,16 @@ export default function upcomingPage() {
     if (todo.parentNode.classList.contains("dueUpcoming")) {
       // do nothing. Ensures no duplicates
     }
+    if (todo.parentNode.classList.contains("dueToday")) {
+      todayTodos.removeChild(todo.parentNode);
+      listTodos.appendChild(todo.parentNode);
+      todo.parentNode.classList.remove("dueToday");
+    }
+    /* function deleteinterior() {
+      todayTodos.innerHTML = "";
+    }
+    deleteinterior(); */
+
     for (let i = 0; i < week.length; i++) {
       if (todo.textContent === week[i]) {
         todo.parentNode.classList.add("dueUpcoming");
@@ -32,8 +42,8 @@ export default function upcomingPage() {
         const todayPage = document.querySelector(".todayPage");
         todayPage.style.display = "none";
         const upcomingTodos = document.querySelector(".upcomingTodos");
-        const todoClones = todo.parentNode.cloneNode(true);
-        upcomingTodos.appendChild(todoClones);
+        listTodos.removeChild(todo.parentNode);
+        upcomingTodos.appendChild(todo.parentNode);
       }
     }
   });
