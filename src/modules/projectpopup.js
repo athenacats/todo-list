@@ -35,7 +35,7 @@ export default function projectCreationPopup() {
   projectPopupForm.appendChild(buttonBox);
 
   const button = document.createElement("button");
-  button.setAttribute("type", "submit");
+  button.setAttribute("type", "button");
   button.setAttribute("id", "projectSubmit");
   button.textContent = "Submit";
   button.addEventListener("click", () => {
