@@ -17,7 +17,7 @@ export default function dueToday() {
       const upcoming = document.querySelector(".upcomingPage");
       upcoming.style.display = "none";
       const todayPage = document.querySelector(".todayPage");
-      todayPage.style.display = "flex";
+      todayPage.style.display = "block";
       const todayTodos = document.querySelector(".todayTodos");
       todayTodos.appendChild(todo.parentNode);
     }
