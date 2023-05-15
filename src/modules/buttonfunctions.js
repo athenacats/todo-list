@@ -3,7 +3,7 @@ import renderTodoList from "./rendertodolist";
 import { createTodoList, todos } from "./todolist";
 import enableSubmit from "./formvalidation";
 
-let arr = [];
+let arr = []; // need it to be exported so it's used in rendering the inbox, today, upcoming pages
 
 export default function buttonFunctions() {
   enableSubmit();
