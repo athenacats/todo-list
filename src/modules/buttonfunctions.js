@@ -1,6 +1,9 @@
+/* eslint-disable import/no-mutable-exports */
 import renderTodoList from "./rendertodolist";
 import { createTodoList, todos } from "./todolist";
 import enableSubmit from "./formvalidation";
+
+let arr = [];
 
 export default function buttonFunctions() {
   enableSubmit();
@@ -19,8 +22,10 @@ export default function buttonFunctions() {
   } else {
     const filtering = todos.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
 
-    const arr = filtering.sort((a, b) => a.dueDate - b.dueDate);
+    arr = filtering.sort((a, b) => a.dueDate - b.dueDate);
 
     renderTodoList(arr);
   }
 }
+
+export { arr };
