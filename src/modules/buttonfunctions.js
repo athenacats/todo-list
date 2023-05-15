@@ -19,7 +19,7 @@ export default function buttonFunctions() {
   } else {
     todos.filter((item) => item);
 
-    console.log(todos.sort((a, b) => a.dueDate - b.dueDate));
+    todos.sort((a, b) => a.dueDate - b.dueDate);
 
     // for each
     renderTodoList();
