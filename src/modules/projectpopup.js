@@ -17,7 +17,7 @@ export default function projectCreationPopup() {
   projectPopup.appendChild(projectPopupForm);
 
   const projectLabel = document.createElement("label");
-  projectLabel.setAttribute("for", "projectLabel");
+  projectLabel.setAttribute("for", "projectName");
   projectLabel.textContent = "Project Name";
   projectPopupForm.appendChild(projectLabel);
 

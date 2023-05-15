@@ -13,6 +13,8 @@ export default function buttonFunctions() {
   const todoList = createTodoList();
   todoList.addTodo(title, description, dueDate, dueTime, priority);
 
+  console.log(todoList);
+
   if (title === "") {
     // require this so that blank todos are not attached on subsequent submits
     // do nothing

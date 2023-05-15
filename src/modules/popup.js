@@ -50,7 +50,7 @@ export default function taskPopUp() {
   controls.appendChild(datePicker);
 
   const timeLabel = document.createElement("label");
-  timeLabel.setAttribute("for", "time");
+  timeLabel.setAttribute("for", "duetime");
   timeLabel.textContent = "Time";
   controls.appendChild(timeLabel);
 
