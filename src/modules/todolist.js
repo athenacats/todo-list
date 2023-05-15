@@ -2,15 +2,13 @@
 function todoitems(title, descriprion, dueDate, dueTime, priority) {
   return { title, descriprion, dueDate, dueTime, priority };
 }
+export const todos = [];
 
 const createTodoList = () => {
-  const todos = [];
-
   const addTodo = (title, descriprion, dueDate, dueTime, priority) => {
     const newTodo = todoitems(title, descriprion, dueDate, dueTime, priority);
     todos.push(newTodo);
   };
-  console.log(todos);
 
   /* const removeTodo = (index) => {
         todos.splice(index, 1);
@@ -28,4 +26,4 @@ const createTodoList = () => {
   };
 };
 
-export default createTodoList;
+export { createTodoList };
