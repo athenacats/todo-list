@@ -19,10 +19,8 @@ export default function buttonFunctions() {
   } else {
     todos.filter((item) => item);
 
-    todos.sort((a, b) => a.dueDate - b.dueDate);
+    const arr = todos.sort((a, b) => a.dueDate - b.dueDate);
 
-    // for each
-    renderTodoList();
-    // console.log(todos);
+    renderTodoList(arr);
   }
 }
