@@ -10,6 +10,7 @@ const createTodoList = () => {
     const newTodo = todoitems(title, descriprion, dueDate, dueTime, priority);
     todos.push(newTodo);
   };
+  console.log(todos);
 
   /* const removeTodo = (index) => {
         todos.splice(index, 1);
