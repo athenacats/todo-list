@@ -3,6 +3,7 @@ import format from "date-fns/format";
 import todoListDeleteButton from "./todolistdelete";
 import todoListChecked from "./todolistchecked";
 
+// ninitially used this code, but it only appended as last child. we need dynamically sorted
 /* export default function renderTodoList() {
   const title = document.querySelector("#popupTitle").value;
   const dueDate = document.querySelector("#duedate").value;
@@ -68,6 +69,9 @@ import todoListChecked from "./todolistchecked";
 export default function renderTodoList(arr) {
   const listTodos = document.querySelector(".listTodos");
   listTodos.innerHTML = "";
+  arr.filter((item) => item);
+
+  arr.sort((a, b) => a.dueDate - b.dueDate);
 
   for (let i = 0; i < arr.length; i++) {
     const todo = arr[i];

@@ -13,13 +13,13 @@ export default function buttonFunctions() {
   const todoList = createTodoList();
   todoList.addTodo(title, description, dueDate, dueTime, priority);
 
-  if (title === "" && !dueDate.valueOf().isNaN) {
+  if (title === "" && dueDate.valueOf().isNaN) {
     // require this so that blank todos are not attached on subsequent submits
     // do nothing
   } else {
-    todos.filter((item) => item);
+    const filtering = todos.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
 
-    const arr = todos.sort((a, b) => a.dueDate - b.dueDate);
+    const arr = filtering.sort((a, b) => a.dueDate - b.dueDate);
 
     renderTodoList(arr);
   }
