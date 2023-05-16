@@ -29,7 +29,7 @@ export default function buttonFunctions() {
     console.log(existingTasks);
     const filtering = existingTasks.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
 
-    arr = filtering.sort((a, b) => a.dueDate - b.dueDate);
+    arr = filtering.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
     renderTodoList(arr);
   }
