@@ -1,23 +1,38 @@
 import { format, addDays, parseISO } from "date-fns";
+import parseJSON from "date-fns/parseJSON";
 import startPage from "./modules/startpage";
 import mainContainer from "./modules/container";
 import sidePanelFunction from "./modules/sidepanel";
 
 import "./style.css";
-// import renderTodoList from "./modules/rendertodolist";
+import renderTodoList from "./modules/rendertodolist";
 
 startPage();
 mainContainer();
 sidePanelFunction();
 
-// function loadTasks() {
-// const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-// renderTodoList(tasks);
-// Display the tasks on the screen
-// }
-// loadTasks();
+function getFromLocalStorage() {
+  const reference = localStorage.getItem("tasks");
+  // if reference exists
+  if (reference) {
+    // converts back to array and store it in todos array
+    const todos = JSON.parse(reference);
+    console.log(todos);
+    todos.forEach((t) => {
+      console.log(t.dueDate);
+      t.dueDate = parseISO(t.dueDate, "yyyy-MM-dd");
+    });
+    const filtering = todos.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
 
-const today = new Date();
+    const arr = filtering.sort((a, b) => a.dueDate - b.dueDate);
+
+    renderTodoList(arr);
+  }
+}
+// initially get everything from localStorage
+getFromLocalStorage();
+
+/* const today = new Date();
 const dateFormatted = format(today, "yyyy-MM-dd");
 console.log(dateFormatted);
 const formattedDate = parseISO(dateFormatted);
@@ -30,4 +45,4 @@ const day4 = format(addDays(formattedDate, 4), "yyyy-MM-dd");
 const day5 = format(addDays(formattedDate, 5), "yyyy-MM-dd");
 const day6 = format(addDays(formattedDate, 6), "yyyy-MM-dd");
 week.push(dateFormatted, day1, day2, day3, day4, day5, day6);
-console.log(week);
+console.log(week); */
