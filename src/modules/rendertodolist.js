@@ -118,6 +118,7 @@ export default function renderTodoList(arr) {
       parseISO(todo.dueDate, "yyyy-MM-dd"),
       "yyyy-MM-dd"
     );
+    console.log(dateFormatted);
     todoListDueDate.textContent = dateFormatted;
     todoListItem.appendChild(todoListDueDate);
 

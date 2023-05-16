@@ -18,13 +18,16 @@ function getFromLocalStorage() {
     // converts back to array and store it in todos array
     const todos = JSON.parse(reference);
     console.log(todos);
-    /* todos.forEach((t) => {
+    todos.forEach((t) => {
       console.log(t.dueDate);
-      t.dueDate = parseISO(t.dueDate, "yyyy-MM-dd");
-    }); */
+
+      // t.dueDate = parseISO(t.dueDate, "yyyy-MM-dd");
+    });
     const filtering = todos.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
 
-    const arr = filtering.sort((a, b) => a.dueDate - b.dueDate);
+    const arr = filtering.sort(
+      (a, b) => new Date(a.dueDate) - new Date(b.dueDate)
+    );
 
     renderTodoList(arr);
   }
