@@ -1,5 +1,6 @@
-import { arr } from "./buttonfunctions";
+// import { arr } from "./buttonfunctions";
 import renderTodoList from "./rendertodolist";
+// import { getFromLocalStorage } from "..";
 
 export default function inboxPage() {
   const todos = document.querySelectorAll(".todoListDueDate");
@@ -19,7 +20,25 @@ export default function inboxPage() {
   });
   todayTodos.innerHTML = "";
   upcomingTodos.innerHTML = "";
-  renderTodoList(arr);
+  const reference = localStorage.getItem("tasks");
+  // if reference exists
+  if (reference) {
+    // converts back to array and store it in todos array
+    const todolist = JSON.parse(reference);
+
+    todolist.forEach((t) => {
+      console.log(t.dueDate);
+
+      // t.dueDate = parseISO(t.dueDate, "yyyy-MM-dd");
+    });
+    const filtering = todolist.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
+
+    const arr = filtering.sort(
+      (a, b) => new Date(a.dueDate) - new Date(b.dueDate)
+    );
+
+    renderTodoList(arr);
+  }
   const inbox = document.querySelector(".inboxPage");
   inbox.style.display = "block";
   const upcoming = document.querySelector(".upcomingPage");
