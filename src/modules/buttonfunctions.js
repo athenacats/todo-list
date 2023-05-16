@@ -1,4 +1,6 @@
 /* eslint-disable import/no-mutable-exports */
+import format from "date-fns/format";
+import parseISO from "date-fns/parseISO";
 import renderTodoList from "./rendertodolist";
 import { createTodoList /* , todos */ } from "./todolist";
 import enableSubmit from "./formvalidation";
@@ -10,7 +12,10 @@ export default function buttonFunctions() {
   enableSubmit();
   const title = document.querySelector("#popupTitle").value;
   const description = document.querySelector("#popupDescription").value;
-  const dueDate = new Date(document.querySelector("#duedate").value);
+  const dueDate = format(
+    parseISO(document.querySelector("#duedate").value, "yyyy-MM-dd"),
+    "yyyy-MM-dd"
+  );
   const dueTime = document.querySelector("#duetime").value;
   const priority = document.querySelector("#priority").value;
 

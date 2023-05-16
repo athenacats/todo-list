@@ -1,6 +1,7 @@
 /* eslint-disable import/no-mutable-exports */
 /* eslint-disable no-loop-func */
 /* eslint-disable no-plusplus */
+import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 // import todoListDeleteButton from "./todolistdelete";
 import todoListChecked from "./todolistchecked";
@@ -113,7 +114,10 @@ export default function renderTodoList(arr) {
 
     const todoListDueDate = document.createElement("div");
     todoListDueDate.classList.add("todoListDueDate");
-    const dateFormatted = format(todo.dueDate, "yyyy-MM-dd");
+    const dateFormatted = format(
+      parseISO(todo.dueDate, "yyyy-MM-dd"),
+      "yyyy-MM-dd"
+    );
     todoListDueDate.textContent = dateFormatted;
     todoListItem.appendChild(todoListDueDate);
 
