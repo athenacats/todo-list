@@ -5,15 +5,14 @@ export default function inboxPage() {
   const todos = document.querySelectorAll(".todoListDueDate");
   const todayTodos = document.querySelector(".todayTodos");
   const upcomingTodos = document.querySelector(".upcomingTodos");
-  // const listTodos = document.querySelector(".listTodos");
+
   todos.forEach((todo) => {
     if (todo.parentNode.classList.contains("dueToday")) {
       todayTodos.removeChild(todo.parentNode);
-      // listTodos.appendChild(todo.parentNode);
+
       todo.parentNode.classList.remove("dueToday");
     } else if (todo.parentNode.classList.contains("dueUpcoming")) {
       upcomingTodos.removeChild(todo.parentNode);
-      // listTodos.appendChild(todo.parentNode);
 
       todo.parentNode.classList.remove("dueUpcoming");
     }

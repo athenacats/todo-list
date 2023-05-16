@@ -7,6 +7,7 @@ export default function todoListDeleteButton() {
     todoListDeleteButton[i].addEventListener("click", (e) => { */
   // console.log(e.target.innerHTML);
   const div = this.parentNode;
+  div.remove();
   div.style.display = "none";
   // });
   // }

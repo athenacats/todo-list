@@ -1,7 +1,12 @@
+/* eslint-disable import/no-mutable-exports */
+/* eslint-disable no-loop-func */
 /* eslint-disable no-plusplus */
 import format from "date-fns/format";
-import todoListDeleteButton from "./todolistdelete";
+// import todoListDeleteButton from "./todolistdelete";
 import todoListChecked from "./todolistchecked";
+import { removeTask } from "./localstorage";
+
+const newArray = [];
 
 // ninitially used this code, but it only appended as last child. we need dynamically sorted
 /* export default function renderTodoList() {
@@ -69,9 +74,9 @@ import todoListChecked from "./todolistchecked";
 export default function renderTodoList(arr) {
   const listTodos = document.querySelector(".listTodos");
   listTodos.innerHTML = "";
-  arr.filter((item) => item);
+  /* arr.filter((item) => item);
 
-  arr.sort((a, b) => a.dueDate - b.dueDate);
+  arr.sort((a, b) => a.dueDate - b.dueDate); */
 
   for (let i = 0; i < arr.length; i++) {
     const todo = arr[i];
@@ -127,7 +132,14 @@ export default function renderTodoList(arr) {
     todoListDelete.classList.add("todoListDelete");
     todoListDelete.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>';
-    todoListDelete.addEventListener("click", todoListDeleteButton);
+    todoListDelete.addEventListener("click", (event) => {
+      const { index } = event.target.dataset; // assuming the index is stored in a data attribute
+      arr.splice(index, 1);
+      renderTodoList(arr);
+      removeTask();
+    });
     todoListItem.appendChild(todoListDelete);
   }
 }
+
+export { newArray };

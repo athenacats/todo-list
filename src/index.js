@@ -4,10 +4,18 @@ import mainContainer from "./modules/container";
 import sidePanelFunction from "./modules/sidepanel";
 
 import "./style.css";
+// import renderTodoList from "./modules/rendertodolist";
 
 startPage();
 mainContainer();
 sidePanelFunction();
+
+// function loadTasks() {
+// const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+// renderTodoList(tasks);
+// Display the tasks on the screen
+// }
+// loadTasks();
 
 const today = new Date();
 const dateFormatted = format(today, "yyyy-MM-dd");
