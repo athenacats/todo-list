@@ -9,8 +9,13 @@ export const todos = [];
 const createTodoList = () => {
   const addTodo = (title, descriprion, dueDate, dueTime, priority) => {
     const newTodo = todoitems(title, descriprion, dueDate, dueTime, priority);
-    todos.push(newTodo);
-    addTask(newTodo);
+    if (title === "" && dueDate.valueOf().isNaN) {
+      // require this so that blank todos are not attached on subsequent submits
+      // do nothing
+    } else {
+      todos.push(newTodo);
+      addTask(newTodo);
+    }
   };
 
   /* const removeTodo = (index) => {
