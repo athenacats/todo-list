@@ -33,7 +33,7 @@ export default function renderProject(existingProjects) {
         (el) => el.id != identity
       );
       localStorage.setItem("projects", JSON.stringify(newstoredProjects));
-      window.location.reload();
+      window.location.reload(); // opted for this so that the dropdown menu in popup.js is also updated
     });
     newProject.appendChild(projectDelete);
   }
