@@ -75,13 +75,14 @@ const newArray = [];
 export default function renderTodoList(arr) {
   const listTodos = document.querySelector(".listTodos");
   listTodos.innerHTML = "";
-  /* arr.filter((item) => item);
+  arr.filter((item) => item);
 
-  arr.sort((a, b) => a.dueDate - b.dueDate); */
+  arr.sort((a, b) => a.dueDate - b.dueDate);
 
   for (let i = 0; i < arr.length; i++) {
     const todo = arr[i];
     const todoListItem = document.createElement("li");
+    todoListItem.setAttribute("id", todo.index);
     todoListItem.classList.add("todoListItem");
     listTodos.appendChild(todoListItem);
 
@@ -118,7 +119,6 @@ export default function renderTodoList(arr) {
       parseISO(todo.dueDate, "yyyy-MM-dd"),
       "yyyy-MM-dd"
     );
-    console.log(dateFormatted);
     todoListDueDate.textContent = dateFormatted;
     todoListItem.appendChild(todoListDueDate);
 
@@ -135,21 +135,18 @@ export default function renderTodoList(arr) {
 
     const todoListDelete = document.createElement("svg");
     todoListDelete.classList.add("todoListDelete");
-    todoListDelete.dataset.id = todo.id;
+    // todoListDelete.dataset.index = todo.index;
     todoListDelete.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>';
     todoListDelete.addEventListener("click", (event) => {
-      const { id } = event.target.dataset; // assuming the index is stored in a data attribute
-
-      const reference = localStorage.getItem("tasks");
-      let todolist = JSON.parse(reference);
-      /* const sorted = todolist.sort(
-        (a, b) => new Date(a.dueDate) - new Date(b.dueDate)
-      ); */
-      todolist = todolist.filter((todo) => todo.id !== id);
-      localStorage.setItem("tasks", JSON.stringify(todolist));
-
-      renderTodoList(todolist);
+      event.preventDefault();
+      const identity = event.currentTarget.parentElement.getAttribute("id");
+      console.log(identity);
+      const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      // eslint-disable-next-line eqeqeq
+      const newTodoList = existingTasks.filter((el) => el.index != identity);
+      localStorage.setItem("tasks", JSON.stringify(newTodoList));
+      renderTodoList(newTodoList);
     });
     todoListItem.appendChild(todoListDelete);
   }

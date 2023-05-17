@@ -18,9 +18,10 @@ export default function buttonFunctions() {
   );
   const dueTime = document.querySelector("#duetime").value;
   const priority = document.querySelector("#priority").value;
+  const index = Date.now();
 
   const todoList = createTodoList();
-  todoList.addTodo(title, description, dueDate, dueTime, priority);
+  todoList.addTodo(title, description, dueDate, dueTime, priority, index);
 
   if (title === "" && dueDate.valueOf().isNaN) {
     // require this so that blank todos are not attached on subsequent submits

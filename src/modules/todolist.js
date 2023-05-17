@@ -1,14 +1,21 @@
 import { addTask } from "./localstorage";
 
 /* eslint-disable no-plusplus */
-function todoitems(title, descriprion, dueDate, dueTime, priority) {
-  return { title, descriprion, dueDate, dueTime, priority };
+function todoitems(title, descriprion, dueDate, dueTime, priority, index) {
+  return { title, descriprion, dueDate, dueTime, priority, index };
 }
 export const todos = [];
 
 const createTodoList = () => {
-  const addTodo = (title, descriprion, dueDate, dueTime, priority) => {
-    const newTodo = todoitems(title, descriprion, dueDate, dueTime, priority);
+  const addTodo = (title, descriprion, dueDate, dueTime, priority, index) => {
+    const newTodo = todoitems(
+      title,
+      descriprion,
+      dueDate,
+      dueTime,
+      priority,
+      index
+    );
     if (title === "" && dueDate.valueOf().isNaN) {
       // require this so that blank todos are not attached on subsequent submits
       // do nothing
