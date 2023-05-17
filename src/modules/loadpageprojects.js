@@ -1,9 +1,7 @@
 import renderTodoList from "./rendertodolist";
 
 export default function loadpage() {
-  const reference = localStorage.getItem("tasks");
-
-  const todolist = JSON.parse(reference);
+  const todolist = JSON.parse(localStorage.getItem("tasks")) || [];
   const filtering = todolist.filter((el) => el.project === this.id);
 
   const arr = filtering.sort(

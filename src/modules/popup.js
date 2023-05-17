@@ -141,7 +141,9 @@ export default function taskPopUp() {
   existingProjects.forEach((project) => {
     const option = document.createElement("option");
     option.setAttribute("value", project.id);
+
     option.textContent = project.projectTitle;
+    console.log(option.textContent);
     projectPicker.appendChild(option);
   });
 
