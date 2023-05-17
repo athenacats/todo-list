@@ -25,6 +25,27 @@
       > * {
         padding-top: 20px;
       }
+      #variableProjects {
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        button {
+          padding-top: 20px;
+          display: grid;
+          grid-template-columns: 4fr 1fr;
+          svg {
+            height: 1.2rem;
+            align-self: center;
+            path {
+              stroke: $tertiary;
+            }
+          }
+          h3 {
+            justify-self: flex-start;
+          }
+        }
+      }
     }
     button {
       background-color: $sidePanel;

@@ -25,8 +25,9 @@ export default function renderProject(existingProjects) {
       const identity = event.currentTarget.getAttribute("id");
       console.log(identity);
       const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-      // eslint-disable-next-line eqeqeq
+
       const newstoredProjects = storedProjects.filter(
+        // eslint-disable-next-line eqeqeq
         (el) => el.id != identity
       );
       renderProject(newstoredProjects);
