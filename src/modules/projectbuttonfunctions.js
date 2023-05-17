@@ -25,6 +25,13 @@ export default function projectButtonFunctions() {
   const id = Date.now();
   console.log(id);
 
+  const option = document.createElement("option");
+  option.setAttribute("value", id);
+
+  option.textContent = projectTitle;
+  console.log(option.textContent);
+  document.getElementById("project").appendChild(option);
+
   const finalProjectList = projectList();
   finalProjectList.addNewProject(projectTitle, id);
 
