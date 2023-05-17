@@ -4,8 +4,10 @@ export default function renderProject() {
   const project = document.getElementById("projectName").value;
   const bottomPanel = document.querySelector(".bottomPanel");
 
+  const index = Date.now();
+
   const newProject = document.createElement("button");
-  newProject.setAttribute("id", "3");
+  newProject.setAttribute("id", index);
   newProject.setAttribute("type", "button");
   const text = document.createElement("h3");
   text.textContent = project;
