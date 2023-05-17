@@ -105,6 +105,25 @@ export default function taskPopUp() {
   option3.style.color = "red";
   priorityPicker.appendChild(option3);
 
+  const projectLabel = document.createElement("label");
+  projectLabel.setAttribute("for", "project");
+  projectLabel.textContent = "Project";
+  controls.appendChild(projectLabel);
+
+  const projectPicker = document.createElement("select");
+  projectPicker.setAttribute("id", "project");
+  projectPicker.setAttribute("change", enableSubmit);
+  projectPicker.setAttribute("name", "project");
+  projectPicker.required = true;
+  controls.appendChild(projectPicker);
+
+  const projectPlaceholder = document.createElement("option");
+  projectPlaceholder.setAttribute("value", "");
+  projectPlaceholder.setAttribute("disabled", "");
+  projectPlaceholder.setAttribute("selected", "");
+  projectPlaceholder.textContent = "Select";
+  projectPicker.appendChild(projectPlaceholder);
+
   const buttonBox = document.createElement("div");
   buttonBox.classList.add("buttonBox");
   popupForm.appendChild(buttonBox);
