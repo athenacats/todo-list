@@ -90,6 +90,10 @@ export default function sidePanelFunction() {
   work.appendChild(text5);
   bottomPanel.appendChild(work);
 
+  const variableProjects = document.createElement("div");
+  variableProjects.setAttribute("id", "variableProjects");
+  bottomPanel.appendChild(variableProjects);
+
   const addProject = document.createElement("button");
   addProject.setAttribute("id", "addProject");
   addProject.setAttribute("type", "button");
