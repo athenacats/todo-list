@@ -129,6 +129,7 @@
 .popup form .controls #duedate,
 .popup form .controls #duetime,
 .popup form .controls #priority,
+.popup form .controls #project,
 .popup form .controls label,
 .popup form .controls option {
   font-family: "Lora", Georgia, serif;

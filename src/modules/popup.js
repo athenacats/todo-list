@@ -123,6 +123,18 @@ export default function taskPopUp() {
   projectPlaceholder.textContent = "Select";
   projectPicker.appendChild(projectPlaceholder);
 
+  const option4 = document.createElement("option");
+  option4.classList.add("personal");
+  option4.setAttribute("value", "personal");
+  option4.textContent = "Personal";
+  projectPicker.appendChild(option4);
+
+  const option5 = document.createElement("option");
+  option5.classList.add("work");
+  option5.setAttribute("value", "work");
+  option5.textContent = "Work";
+  projectPicker.appendChild(option5);
+
   const buttonBox = document.createElement("div");
   buttonBox.classList.add("buttonBox");
   popupForm.appendChild(buttonBox);
