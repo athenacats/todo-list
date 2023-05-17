@@ -6,6 +6,7 @@ import sidePanelFunction from "./modules/sidepanel";
 
 import "./style.css";
 import renderTodoList from "./modules/rendertodolist";
+import renderProject from "./modules/renderproject";
 
 startPage();
 mainContainer();
@@ -30,6 +31,15 @@ function getFromLocalStorage() {
     );
 
     renderTodoList(arr);
+  }
+
+  const projects = localStorage.getItem("projects");
+  if (projects) {
+    // converts back to array and store it in todos array
+    const projectlist = JSON.parse(projects);
+    console.log(projects);
+
+    renderProject(projectlist);
   }
 }
 // initially get everything from localStorage

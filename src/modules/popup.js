@@ -114,7 +114,6 @@ export default function taskPopUp() {
   projectPicker.setAttribute("id", "project");
   projectPicker.setAttribute("change", enableSubmit);
   projectPicker.setAttribute("name", "project");
-  projectPicker.required = true;
   controls.appendChild(projectPicker);
 
   const projectPlaceholder = document.createElement("option");
