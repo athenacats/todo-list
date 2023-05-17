@@ -1,5 +1,6 @@
 /* eslint-disable no-plusplus */
 // import todoListDeleteButton from "./todolistdelete";
+import loadpage from "./loadpageprojects";
 
 export default function renderProject(existingProjects) {
   const variableProjects = document.querySelector("#variableProjects");
@@ -11,6 +12,7 @@ export default function renderProject(existingProjects) {
     const newProject = document.createElement("button");
     newProject.setAttribute("id", item.id);
     newProject.setAttribute("type", "button");
+    newProject.addEventListener("click", loadpage);
     const text = document.createElement("h3");
     text.textContent = item.projectTitle;
     newProject.appendChild(text);

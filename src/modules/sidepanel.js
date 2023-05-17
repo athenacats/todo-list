@@ -3,6 +3,7 @@ import createProject from "./createProject";
 import dueToday from "./duetoday";
 import inboxPage from "./inboxpage";
 import upcomingPage from "./upcomingpage";
+import loadpage from "./loadpageprojects";
 
 export default function sidePanelFunction() {
   const sidePanel = document.querySelector(".sidePanel");
@@ -77,6 +78,7 @@ export default function sidePanelFunction() {
   const personal = document.createElement("button");
   personal.setAttribute("id", "personal");
   personal.setAttribute("type", "button");
+  personal.addEventListener("click", loadpage);
   const text4 = document.createElement("h3");
   text4.textContent = "Personal";
   personal.appendChild(text4);
@@ -85,6 +87,7 @@ export default function sidePanelFunction() {
   const work = document.createElement("button");
   work.setAttribute("id", "work");
   work.setAttribute("type", "button");
+  work.addEventListener("click", loadpage);
   const text5 = document.createElement("h3");
   text5.textContent = "Work";
   work.appendChild(text5);
