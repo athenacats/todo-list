@@ -32,8 +32,8 @@ export default function renderProject(existingProjects) {
         // eslint-disable-next-line eqeqeq
         (el) => el.id != identity
       );
-      renderProject(newstoredProjects);
       localStorage.setItem("projects", JSON.stringify(newstoredProjects));
+      window.location.reload();
     });
     newProject.appendChild(projectDelete);
   }
