@@ -135,6 +135,16 @@ export default function taskPopUp() {
   option5.textContent = "Work";
   projectPicker.appendChild(option5);
 
+  const existingProjects = JSON.parse(localStorage.getItem("projects")) || [];
+
+  // Dynamically load options from local storage
+  existingProjects.forEach((project) => {
+    const option = document.createElement("option");
+    option.setAttribute("value", project.id);
+    option.textContent = project.projectTitle;
+    projectPicker.appendChild(option);
+  });
+
   const buttonBox = document.createElement("div");
   buttonBox.classList.add("buttonBox");
   popupForm.appendChild(buttonBox);
