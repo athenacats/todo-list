@@ -24,3 +24,10 @@
     cursor: pointer;
   }
 }
+
+.checked {
+  background-color: $cancel;
+  .todoListPriority svg {
+    stroke: #160416;
+  }
+}

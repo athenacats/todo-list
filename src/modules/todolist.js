@@ -8,9 +8,19 @@ function todoitems(
   dueTime,
   priority,
   index,
-  project
+  project,
+  checked
 ) {
-  return { title, descriprion, dueDate, dueTime, priority, index, project };
+  return {
+    title,
+    descriprion,
+    dueDate,
+    dueTime,
+    priority,
+    index,
+    project,
+    checked,
+  };
 }
 export const todos = [];
 
@@ -22,7 +32,8 @@ const createTodoList = () => {
     dueTime,
     priority,
     index,
-    project
+    project,
+    checked
   ) => {
     const newTodo = todoitems(
       title,
@@ -31,7 +42,8 @@ const createTodoList = () => {
       dueTime,
       priority,
       index,
-      project
+      project,
+      checked
     );
     if (title === "" && dueDate.valueOf().isNaN) {
       // require this so that blank todos are not attached on subsequent submits

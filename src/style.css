@@ -212,6 +212,13 @@
   cursor: pointer;
 }
 
+.checked {
+  background-color: #816f72;
+}
+.checked .todoListPriority svg {
+  stroke: #160416;
+}
+
 .projectPopup {
   margin: auto;
   position: absolute;
