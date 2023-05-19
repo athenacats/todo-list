@@ -1,7 +1,7 @@
 import projectCreationPopup from "./projectpopup";
 import formActions from "./formActions";
 import enableSubmit from "./formvalidation";
-import cancelForm, { editCancelForm } from "./formcancel";
+import cancelForm, { closeDisplay, editCancelForm } from "./formcancel";
 
 export default function mainContainer() {
   const container = document.querySelector(".container");
@@ -358,6 +358,46 @@ export default function mainContainer() {
   editCancelButton.textContent = "Cancel";
   editCancelButton.addEventListener("click", editCancelForm);
   editButtonBox.appendChild(editCancelButton);
+
+  const todoDisplay = document.createElement("div");
+  todoDisplay.classList.add("todoDisplay");
+  todoDisplay.style.filter = "none";
+  todoDisplay.style.display = "none";
+  container.appendChild(todoDisplay);
+
+  const todoDisplayCard = document.createElement("div");
+  todoDisplayCard.classList.add("todoDisplayCard");
+  todoDisplay.appendChild(todoDisplayCard);
+
+  const todoDisplayTitle = document.createElement("h3");
+  todoDisplayTitle.classList.add("todoDisplayTitle");
+  todoDisplayCard.appendChild(todoDisplayTitle);
+
+  const todoDisplayPara = document.createElement("h4");
+  todoDisplayPara.classList.add("todoDisplayPara");
+  todoDisplayCard.appendChild(todoDisplayPara);
+
+  const todoDisplayDate = document.createElement("p");
+  todoDisplayDate.classList.add("todoDisplayDate");
+  todoDisplayCard.appendChild(todoDisplayDate);
+
+  const todoDisplayTime = document.createElement("p");
+  todoDisplayTime.classList.add("todoDisplayTime");
+  todoDisplayCard.appendChild(todoDisplayTime);
+
+  const todoDisplayPriority = document.createElement("p");
+  todoDisplayPriority.classList.add("todoDisplayPriority");
+  todoDisplayCard.appendChild(todoDisplayPriority);
+
+  const todoDisplayProject = document.createElement("p");
+  todoDisplayProject.classList.add("todoDisplayProject");
+  todoDisplayCard.appendChild(todoDisplayProject);
+
+  const closeButton = document.createElement("button");
+  closeButton.classList.add("closeButton");
+  closeButton.setAttribute("type", "button");
+  closeButton.addEventListener("click", closeDisplay);
+  todoDisplayCard.appendChild(closeButton);
 
   projectCreationPopup();
 }

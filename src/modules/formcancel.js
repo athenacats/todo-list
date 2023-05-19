@@ -23,3 +23,17 @@ export function editCancelForm() {
   content.style.webkitFilter = "none";
   popup.style.display = "none";
 }
+
+export function closeDisplay() {
+  const content = document.querySelector(".content");
+  const popup = document.querySelector(".todoDisplay");
+  document.querySelector(".todoDisplayTitle").value = "";
+  document.querySelector(".todoDisplayPara").value = "";
+  document.querySelector("todoDisplayDate").value = "";
+  document.querySelector("todoDisplayTime").value = "";
+  document.querySelector("todoDisplayPriority").value = "";
+  document.querySelector(".todoDisplayProject").value = "";
+  content.style.filter = "none";
+  content.style.webkitFilter = "none";
+  popup.style.display = "none";
+}
