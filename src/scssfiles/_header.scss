@@ -1,6 +1,6 @@
 .header {
-  background-color: $primary;
-  color: $secondary;
+  background-color: var(--primary);
+  color: var(--secondary);
   display: grid;
   grid-template-columns: 10fr 1fr;
   justify-content: center;
@@ -16,15 +16,16 @@
     justify-self: flex-end;
     justify-content: flex-end;
     outline: none;
-    background-color: $primary;
+    background-color: var(--primary);
     border: none;
+    cursor: pointer;
   }
   svg {
     height: 1.5rem;
     justify-self: end;
 
     path {
-      fill: $secondary;
+      fill: var(--secondary);
     }
   }
 }

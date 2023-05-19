@@ -11,20 +11,20 @@
   form {
     width: 70%;
     height: 100%;
-    background-color: $sidePanel;
+    background-color: var(--sidePanel);
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
-    box-shadow: 0 0 16px 8px $primary;
+    box-shadow: 0 0 16px 8px var(--primary);
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
     input {
-      background-color: $formbackground;
+      background-color: var(--formbackground);
       height: 2rem;
       width: 80%;
       outline: none;
-      color: $tertiary;
+      color: var(--tertiary);
       border: none;
       border-radius: 16px;
       resize: none; //remove the diagonal lines to resize textarea
@@ -38,7 +38,7 @@
     }
     label {
       font-family: $fonts;
-      color: $tertiary;
+      color: var(--tertiary);
       font-size: 1rem;
       margin-left: 5%;
     }
@@ -50,22 +50,22 @@
       button {
         width: 50%;
         outline: none;
-        border: 1px solid $sidePanel;
+        border: 1px solid var(--sidePanel);
         border-radius: 16px;
         font-family: $fonts;
-        color: $secondary;
+        color: var(--secondary);
         padding-top: 5px;
         padding-bottom: 5px;
         cursor: pointer;
       }
       #projectSubmit {
-        background-color: $primary;
-        color: $secondary;
+        background-color: var(--primary);
+        color: var(--secondary);
         justify-self: flex-end;
         margin-right: 5px;
       }
       #projectCancel {
-        background-color: $cancel;
+        background-color: var(--cancel);
         justify-self: flex-start;
         margin-left: 5px;
       }

@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   width: 100%;
+  background-color: var(--secondary);
 
   .sidePanel {
-    background-color: $sidePanel;
+    background-color: var(--sidePanel);
     height: 88vh;
     display: grid;
     grid-template-rows: 3fr 1fr 6fr 1fr;
-    color: $tertiary;
+    color: var(--tertiary);
     .topPanel {
       display: flex;
       flex-direction: column;
@@ -38,7 +39,7 @@
             height: 1.2rem;
             align-self: center;
             path {
-              stroke: $tertiary;
+              stroke: var(--tertiary);
             }
           }
           h3 {
@@ -48,12 +49,12 @@
       }
     }
     button {
-      background-color: $sidePanel;
+      background-color: var(--sidePanel);
       outline: none;
       border: none;
       cursor: pointer;
       font-family: $fonts;
-      color: $tertiary;
+      color: var(--tertiary);
       font-size: 1rem;
       svg.feather.feather-plus-square {
         height: 100%;
@@ -65,8 +66,8 @@
         font-family: $fonts;
         font-size: 0.8rem;
         text-align: center;
-        color: $tertiary;
-        background-color: $primary;
+        color: var(--tertiary);
+        background-color: var(--primary);
         padding: 5px 0;
         border-radius: 6px;
         width: 120px;

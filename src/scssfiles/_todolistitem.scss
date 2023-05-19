@@ -1,23 +1,23 @@
 .todoListItem {
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid var(--primary);
   border-radius: 16px;
   width: 90%;
   padding: 5px;
   margin: 5px auto;
 
-  box-shadow: 0 0 8px $primary;
+  box-shadow: 0 0 8px var(--primary);
   height: 3rem;
   align-items: center;
 
-  color: $tertiary;
+  color: var(--tertiary);
   display: grid;
   grid-template-columns: 1fr 5fr 2fr 3fr 2fr 1fr 1fr;
   #todoListButton {
-    background-color: $sidePanel;
+    background-color: var(--sidePanel);
     font-family: $fonts;
     padding: 3px 8px;
     border-radius: 16px;
-    color: $tertiary;
+    color: var(--tertiary);
     border: none;
     outline: none;
     height: 2.3rem;

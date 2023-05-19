@@ -10,17 +10,17 @@
   form {
     width: 70%;
     height: 100%;
-    background-color: $sidePanel;
+    background-color: var(--sidePanel);
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
-    box-shadow: 0 0 16px 8px $primary;
+    box-shadow: 0 0 16px 8px var(--primary);
     display: grid;
     grid-template-rows: 1fr 4fr 2fr 1fr;
     textarea {
-      background-color: $formbackground;
+      background-color: var(--formbackground);
       outline: none;
-      color: $tertiary;
+      color: var(--tertiary);
       border: none;
       resize: none; //remove the diagonal lines to resize textarea
       font-family: $fonts;
@@ -43,7 +43,7 @@
       label,
       option {
         font-family: $fonts;
-        color: $tertiary;
+        color: var(--tertiary);
         font-size: 0.8rem;
       }
     }
@@ -54,22 +54,22 @@
       button {
         width: 50%;
         outline: none;
-        border: 1px solid $sidePanel;
+        border: 1px solid var(--sidePanel);
         border-radius: 16px;
         font-family: $fonts;
-        color: $secondary;
+        color: var(--secondary);
         padding-top: 5px;
         padding-bottom: 5px;
         cursor: pointer;
       }
       #submit {
-        background-color: $primary;
-        color: $secondary;
+        background-color: var(--primary);
+        color: var(--secondary);
         justify-self: flex-end;
         margin-right: 5px;
       }
       #cancel {
-        background-color: $cancel;
+        background-color: var(--cancel);
         justify-self: flex-start;
         margin-left: 5px;
       }
@@ -89,7 +89,7 @@
   form {
     width: 70%;
     height: 100%;
-    background-color: $sidePanel;
+    background-color: var(--sidePanel);
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
@@ -97,7 +97,7 @@
     display: grid;
     grid-template-rows: 1fr 4fr 2fr 1fr;
     textarea {
-      background-color: $formbackground;
+      background-color: var(--formbackground);
       outline: none;
       color: $tertiary;
       border: none;
@@ -122,7 +122,7 @@
       label,
       option {
         font-family: $fonts;
-        color: $tertiary;
+        color: var(--tertiary);
         font-size: 0.8rem;
       }
     }
@@ -133,22 +133,22 @@
       button {
         width: 50%;
         outline: none;
-        border: 1px solid $sidePanel;
+        border: 1px solid var(--sidePanel);
         border-radius: 16px;
         font-family: $fonts;
-        color: $secondary;
+        color: var(--secondary);
         padding-top: 5px;
         padding-bottom: 5px;
         cursor: pointer;
       }
       #editsubmit {
-        background-color: $primary;
-        color: $secondary;
+        background-color: var(--primary);
+        color: var(--secondary);
         justify-self: flex-end;
         margin-right: 5px;
       }
       #editcancel {
-        background-color: $cancel;
+        background-color: var(--cancel);
         justify-self: flex-start;
         margin-left: 5px;
       }
@@ -170,11 +170,11 @@
     grid-template-rows: 1fr 4fr 2fr 1fr;
     width: 70%;
     height: 100%;
-    background-color: $sidePanel;
+    background-color: var(--sidePanel);
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
-    box-shadow: 0 0 16px 8px $primary;
+    box-shadow: 0 0 16px 8px var(--primary);
     color: $tertiary;
 
     padding: 10px;
@@ -202,14 +202,14 @@
       justify-self: center;
       width: 50%;
       outline: none;
-      border: 1px solid $sidePanel;
+      border: 1px solid var(--sidePanel);
       border-radius: 16px;
       font-family: $fonts;
-      color: $secondary;
+      color: var(--secondary);
       padding-top: 5px;
       padding-bottom: 5px;
       cursor: pointer;
-      background-color: $cancel;
+      background-color: var(--cancel);
       margin-left: 5px;
       font-size: 1rem;
     }

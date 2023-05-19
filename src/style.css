@@ -5,9 +5,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: rgb(179, 68, 87);
+  --secondary: white;
+  --tertiary: rgb(22, 4, 22);
+  --sidePanel: rgb(240, 186, 195);
+  --cancel: #816f72;
+  --formbackground: rgb(243, 229, 231);
+}
+
+.lightTheme {
+  --primary: rgb(179, 68, 87);
+  --secondary: rgb(22, 4, 22);
+  --tertiary: white;
+  --sidePanel: rgb(14, 1, 14);
+  --cancel: #816f72;
+  --formbackground: rgb(243, 229, 231);
+}
+
 .header {
-  background-color: rgb(179, 68, 87);
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   display: grid;
   grid-template-columns: 10fr 1fr;
   justify-content: center;
@@ -24,28 +42,30 @@
   justify-self: flex-end;
   justify-content: flex-end;
   outline: none;
-  background-color: rgb(179, 68, 87);
+  background-color: var(--primary);
   border: none;
+  cursor: pointer;
 }
 .header svg {
   height: 1.5rem;
   justify-self: end;
 }
 .header svg path {
-  fill: white;
+  fill: var(--secondary);
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 5fr;
   width: 100%;
+  background-color: var(--secondary);
 }
 .content .sidePanel {
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   height: 88vh;
   display: grid;
   grid-template-rows: 3fr 1fr 6fr 1fr;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
 }
 .content .sidePanel .topPanel {
   display: flex;
@@ -80,18 +100,18 @@
   align-self: center;
 }
 .content .sidePanel .bottomPanel #variableProjects button svg path {
-  stroke: rgb(22, 4, 22);
+  stroke: var(--tertiary);
 }
 .content .sidePanel .bottomPanel #variableProjects button h3 {
   justify-self: flex-start;
 }
 .content .sidePanel button {
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   outline: none;
   border: none;
   cursor: pointer;
   font-family: "Lora", Georgia, serif;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   font-size: 1rem;
 }
 .content .sidePanel button svg.feather.feather-plus-square {
@@ -104,8 +124,8 @@
   font-family: "Lora", Georgia, serif;
   font-size: 0.8rem;
   text-align: center;
-  color: rgb(22, 4, 22);
-  background-color: rgb(179, 68, 87);
+  color: var(--tertiary);
+  background-color: var(--primary);
   padding: 5px 0;
   border-radius: 6px;
   width: 120px;
@@ -127,18 +147,18 @@
 .popup form {
   width: 70%;
   height: 100%;
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
-  box-shadow: 0 0 16px 8px rgb(179, 68, 87);
+  box-shadow: 0 0 16px 8px var(--primary);
   display: grid;
   grid-template-rows: 1fr 4fr 2fr 1fr;
 }
 .popup form textarea {
-  background-color: rgb(243, 229, 231);
+  background-color: var(--formbackground);
   outline: none;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   border: none;
   resize: none;
   font-family: "Lora", Georgia, serif;
@@ -162,7 +182,7 @@
 .popup form .controls label,
 .popup form .controls option {
   font-family: "Lora", Georgia, serif;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   font-size: 0.8rem;
 }
 .popup form .buttonBox {
@@ -173,22 +193,22 @@
 .popup form .buttonBox button {
   width: 50%;
   outline: none;
-  border: 1px solid rgb(240, 186, 195);
+  border: 1px solid var(--sidePanel);
   border-radius: 16px;
   font-family: "Lora", Georgia, serif;
-  color: white;
+  color: var(--secondary);
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
 }
 .popup form .buttonBox #submit {
-  background-color: rgb(179, 68, 87);
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   justify-self: flex-end;
   margin-right: 5px;
 }
 .popup form .buttonBox #cancel {
-  background-color: #816f72;
+  background-color: var(--cancel);
   justify-self: flex-start;
   margin-left: 5px;
 }
@@ -206,7 +226,7 @@
 .editPopup form {
   width: 70%;
   height: 100%;
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
@@ -215,7 +235,7 @@
   grid-template-rows: 1fr 4fr 2fr 1fr;
 }
 .editPopup form textarea {
-  background-color: rgb(243, 229, 231);
+  background-color: var(--formbackground);
   outline: none;
   color: rgb(22, 4, 22);
   border: none;
@@ -241,7 +261,7 @@
 .editPopup form .editControls label,
 .editPopup form .editControls option {
   font-family: "Lora", Georgia, serif;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   font-size: 0.8rem;
 }
 .editPopup form .editButtonBox {
@@ -252,22 +272,22 @@
 .editPopup form .editButtonBox button {
   width: 50%;
   outline: none;
-  border: 1px solid rgb(240, 186, 195);
+  border: 1px solid var(--sidePanel);
   border-radius: 16px;
   font-family: "Lora", Georgia, serif;
-  color: white;
+  color: var(--secondary);
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
 }
 .editPopup form .editButtonBox #editsubmit {
-  background-color: rgb(179, 68, 87);
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   justify-self: flex-end;
   margin-right: 5px;
 }
 .editPopup form .editButtonBox #editcancel {
-  background-color: #816f72;
+  background-color: var(--cancel);
   justify-self: flex-start;
   margin-left: 5px;
 }
@@ -287,11 +307,11 @@
   grid-template-rows: 1fr 4fr 2fr 1fr;
   width: 70%;
   height: 100%;
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
-  box-shadow: 0 0 16px 8px rgb(179, 68, 87);
+  box-shadow: 0 0 16px 8px var(--primary);
   color: rgb(22, 4, 22);
   padding: 10px;
   overflow: hidden;
@@ -319,37 +339,37 @@
   justify-self: center;
   width: 50%;
   outline: none;
-  border: 1px solid rgb(240, 186, 195);
+  border: 1px solid var(--sidePanel);
   border-radius: 16px;
   font-family: "Lora", Georgia, serif;
-  color: white;
+  color: var(--secondary);
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
-  background-color: #816f72;
+  background-color: var(--cancel);
   margin-left: 5px;
   font-size: 1rem;
 }
 
 .todoListItem {
-  border-bottom: 1px solid rgb(179, 68, 87);
+  border-bottom: 1px solid var(--primary);
   border-radius: 16px;
   width: 90%;
   padding: 5px;
   margin: 5px auto;
-  box-shadow: 0 0 8px rgb(179, 68, 87);
+  box-shadow: 0 0 8px var(--primary);
   height: 3rem;
   align-items: center;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   display: grid;
   grid-template-columns: 1fr 5fr 2fr 3fr 2fr 1fr 1fr;
 }
 .todoListItem #todoListButton {
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   font-family: "Lora", Georgia, serif;
   padding: 3px 8px;
   border-radius: 16px;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   border: none;
   outline: none;
   height: 2.3rem;
@@ -382,21 +402,21 @@
 .projectPopup form {
   width: 70%;
   height: 100%;
-  background-color: rgb(240, 186, 195);
+  background-color: var(--sidePanel);
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
-  box-shadow: 0 0 16px 8px rgb(179, 68, 87);
+  box-shadow: 0 0 16px 8px var(--primary);
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: center;
 }
 .projectPopup form input {
-  background-color: rgb(243, 229, 231);
+  background-color: var(--formbackground);
   height: 2rem;
   width: 80%;
   outline: none;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   border: none;
   border-radius: 16px;
   resize: none;
@@ -410,7 +430,7 @@
 }
 .projectPopup form label {
   font-family: "Lora", Georgia, serif;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   font-size: 1rem;
   margin-left: 5%;
 }
@@ -423,22 +443,22 @@
 .projectPopup form .projectButtonBox button {
   width: 50%;
   outline: none;
-  border: 1px solid rgb(240, 186, 195);
+  border: 1px solid var(--sidePanel);
   border-radius: 16px;
   font-family: "Lora", Georgia, serif;
-  color: white;
+  color: var(--secondary);
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
 }
 .projectPopup form .projectButtonBox #projectSubmit {
-  background-color: rgb(179, 68, 87);
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   justify-self: flex-end;
   margin-right: 5px;
 }
 .projectPopup form .projectButtonBox #projectCancel {
-  background-color: #816f72;
+  background-color: var(--cancel);
   justify-self: flex-start;
   margin-left: 5px;
 }

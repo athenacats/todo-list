@@ -1,4 +1,6 @@
 $primary: rgb(179, 68, 87);
+$primaryDark: rgb(36, 6, 11);
+$sidePanelDark: rgb(14, 1, 14);
 $secondary: white;
 $tertiary: rgb(22, 4, 22);
 $sidePanel: rgb(240, 186, 195);
@@ -6,3 +8,21 @@ $cancel: #816f72;
 $formbackground: rgb(243, 229, 231);
 
 $fonts: "Lora", Georgia, serif;
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --tertiary: #{$tertiary};
+  --sidePanel: #{$sidePanel};
+  --cancel: #{$cancel};
+  --formbackground: #{$formbackground};
+}
+
+.lightTheme {
+  --primary: #{$primary};
+  --secondary: #{$tertiary};
+  --tertiary: #{$secondary};
+  --sidePanel: #{$sidePanelDark};
+  --cancel: #{$cancel};
+  --formbackground: #{$formbackground};
+}
