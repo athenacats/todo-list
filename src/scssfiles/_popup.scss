@@ -176,9 +176,15 @@
     border-radius: 12px;
     box-shadow: 0 0 16px 8px $primary;
     color: $tertiary;
-    font-size: 1rem;
+
     padding: 10px;
     overflow: hidden;
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
     .todoDisplayControls {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -192,6 +198,8 @@
       }
     }
     .closeButton {
+      margin-top: 10px;
+      justify-self: center;
       width: 50%;
       outline: none;
       border: 1px solid $sidePanel;
@@ -203,6 +211,7 @@
       cursor: pointer;
       background-color: $cancel;
       margin-left: 5px;
+      font-size: 1rem;
     }
   }
 }

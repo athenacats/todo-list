@@ -420,6 +420,7 @@ export default function mainContainer() {
   const closeButton = document.createElement("button");
   closeButton.classList.add("closeButton");
   closeButton.setAttribute("type", "button");
+  closeButton.textContent = "Close";
   closeButton.addEventListener("click", closeDisplay);
   todoDisplayCard.appendChild(closeButton);
 
