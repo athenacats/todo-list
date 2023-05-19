@@ -76,3 +76,82 @@
     }
   }
 }
+
+.editPopup {
+  margin: auto;
+  position: absolute;
+  filter: none;
+  top: 100px;
+  z-index: 10;
+  width: 100%;
+  height: 300px;
+  font-family: $fonts;
+  form {
+    width: 70%;
+    height: 100%;
+    background-color: $sidePanel;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 16px 8px $primary;
+    display: grid;
+    grid-template-rows: 1fr 4fr 2fr 1fr;
+    textarea {
+      background-color: $formbackground;
+      outline: none;
+      color: $tertiary;
+      border: none;
+      resize: none; //remove the diagonal lines to resize textarea
+      font-family: $fonts;
+      font-size: 1rem;
+      padding: 10px;
+      overflow: hidden;
+      textarea:focus {
+        font-size: 1.2rem;
+      }
+    }
+    .editControls {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: center;
+      padding: 0 10px;
+      #editduedate,
+      #editduetime,
+      #editpriority,
+      #editproject,
+      label,
+      option {
+        font-family: $fonts;
+        color: $tertiary;
+        font-size: 0.8rem;
+      }
+    }
+    .editButtonBox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 10px;
+      button {
+        width: 50%;
+        outline: none;
+        border: 1px solid $sidePanel;
+        border-radius: 16px;
+        font-family: $fonts;
+        color: $secondary;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        cursor: pointer;
+      }
+      #editsubmit {
+        background-color: $primary;
+        color: $secondary;
+        justify-self: flex-end;
+        margin-right: 5px;
+      }
+      #editcancel {
+        background-color: $cancel;
+        justify-self: flex-start;
+        margin-left: 5px;
+      }
+    }
+  }
+}

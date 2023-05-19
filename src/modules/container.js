@@ -1,7 +1,7 @@
 import projectCreationPopup from "./projectpopup";
 import formActions from "./formActions";
 import enableSubmit from "./formvalidation";
-import cancelForm from "./formcancel";
+import cancelForm, { editCancelForm } from "./formcancel";
 
 export default function mainContainer() {
   const container = document.querySelector(".container");
@@ -222,17 +222,17 @@ export default function mainContainer() {
   editPopupTitle.setAttribute("placeholder", "Title");
   editPopupTitle.setAttribute("name", "editPopupTitle");
   editPopupTitle.setAttribute("required", "");
-  editPopup.appendChild(editPopupTitle);
+  editPopupForm.appendChild(editPopupTitle);
 
   const editPopupDescription = document.createElement("textarea");
   editPopupDescription.setAttribute("id", "editPopupDescription");
   editPopupDescription.setAttribute("maxlength", "140");
   editPopupDescription.setAttribute("placeholder", "Description");
-  editPopup.appendChild(editPopupDescription);
+  editPopupForm.appendChild(editPopupDescription);
 
   const editControls = document.createElement("div");
   editControls.classList.add("editControls");
-  popupForm.appendChild(editControls);
+  editPopupForm.appendChild(editControls);
 
   const editDateLabel = document.createElement("label");
   editDateLabel.setAttribute("for", "editduedate");
@@ -279,28 +279,28 @@ export default function mainContainer() {
   editOptionPlaceholder.setAttribute("disabled", "");
   editOptionPlaceholder.setAttribute("selected", "");
   editOptionPlaceholder.textContent = "Select";
-  priorityPicker.appendChild(editOptionPlaceholder);
+  editPriorityPicker.appendChild(editOptionPlaceholder);
 
   const editOption1 = document.createElement("option");
   editOption1.classList.add("low");
   editOption1.setAttribute("value", "Low");
   editOption1.textContent = "Low";
   editOption1.style.color = "green";
-  priorityPicker.appendChild(editOption1);
+  editPriorityPicker.appendChild(editOption1);
 
   const editOption2 = document.createElement("option");
   editOption2.classList.add("medium");
   editOption2.setAttribute("value", "Medium");
   editOption2.textContent = "Medium";
   editOption2.style.color = "orange";
-  priorityPicker.appendChild(editOption2);
+  editPriorityPicker.appendChild(editOption2);
 
   const editOption3 = document.createElement("option");
   editOption3.classList.add("high");
   editOption3.setAttribute("value", "High");
   editOption3.textContent = "High";
   editOption3.style.color = "red";
-  priorityPicker.appendChild(editOption3);
+  editPriorityPicker.appendChild(editOption3);
 
   const editProjectLabel = document.createElement("label");
   editProjectLabel.setAttribute("for", "editproject");
@@ -347,19 +347,16 @@ export default function mainContainer() {
   editPopupForm.appendChild(editButtonBox);
 
   const editButton = document.createElement("button");
-  editButton.setAttribute("type", "submit");
+  editButton.setAttribute("type", "button");
   editButton.setAttribute("id", "editsubmit");
   editButton.textContent = "Submit";
-  editButton.addEventListener("click", () => {
-    formActions();
-  });
   editButtonBox.appendChild(editButton);
 
   const editCancelButton = document.createElement("button");
   editCancelButton.setAttribute("type", "button");
-  editCancelButton.setAttribute("id", "cancel");
+  editCancelButton.setAttribute("id", "editcancel");
   editCancelButton.textContent = "Cancel";
-  editCancelButton.addEventListener("click", cancelForm);
+  editCancelButton.addEventListener("click", editCancelForm);
   editButtonBox.appendChild(editCancelButton);
 
   projectCreationPopup();

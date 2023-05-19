@@ -19,34 +19,6 @@ export default function buttonFunctions() {
   const priority = document.querySelector("#priority").value;
   const index = Date.now();
   const project = document.querySelector("#project").value;
-
-  /* const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  const matchingTask = existingTasks.find((task) => task.index === index);
-  if (matchingTask) {
-    const newones = existingTasks.filter(matchingTask);
-    const todoList = createTodoList();
-    todoList.addTodo(
-      title,
-      description,
-      dueDate,
-      dueTime,
-      priority,
-      index,
-      project
-    );
-
-    if (title === "" && dueDate.valueOf().isNaN) {
-      // require this so that blank todos are not attached on subsequent submits
-      // do nothing
-    } else {
-      console.log(newones);
-      const filtering = newones.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
-
-      arr = filtering.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
-
-      renderTodoList(arr);
-    }
-  } else { */
   const todoList = createTodoList();
   todoList.addTodo(
     title,

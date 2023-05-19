@@ -185,6 +185,85 @@
   margin-left: 5px;
 }
 
+.editPopup {
+  margin: auto;
+  position: absolute;
+  filter: none;
+  top: 100px;
+  z-index: 10;
+  width: 100%;
+  height: 300px;
+  font-family: "Lora", Georgia, serif;
+}
+.editPopup form {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(240, 186, 195);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 16px 8px rgb(179, 68, 87);
+  display: grid;
+  grid-template-rows: 1fr 4fr 2fr 1fr;
+}
+.editPopup form textarea {
+  background-color: rgb(243, 229, 231);
+  outline: none;
+  color: rgb(22, 4, 22);
+  border: none;
+  resize: none;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  padding: 10px;
+  overflow: hidden;
+}
+.editPopup form textarea textarea:focus {
+  font-size: 1.2rem;
+}
+.editPopup form .editControls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 10px;
+}
+.editPopup form .editControls #editduedate,
+.editPopup form .editControls #editduetime,
+.editPopup form .editControls #editpriority,
+.editPopup form .editControls #editproject,
+.editPopup form .editControls label,
+.editPopup form .editControls option {
+  font-family: "Lora", Georgia, serif;
+  color: rgb(22, 4, 22);
+  font-size: 0.8rem;
+}
+.editPopup form .editButtonBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 10px;
+}
+.editPopup form .editButtonBox button {
+  width: 50%;
+  outline: none;
+  border: 1px solid rgb(240, 186, 195);
+  border-radius: 16px;
+  font-family: "Lora", Georgia, serif;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.editPopup form .editButtonBox #editsubmit {
+  background-color: rgb(179, 68, 87);
+  color: white;
+  justify-self: flex-end;
+  margin-right: 5px;
+}
+.editPopup form .editButtonBox #editcancel {
+  background-color: #816f72;
+  justify-self: flex-start;
+  margin-left: 5px;
+}
+
 .todoListItem {
   border-bottom: 1px solid rgb(179, 68, 87);
   border-radius: 16px;

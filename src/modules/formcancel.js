@@ -10,3 +10,16 @@ export default function cancelForm() {
   content.style.webkitFilter = "none";
   popup.style.display = "none";
 }
+
+export function editCancelForm() {
+  const content = document.querySelector(".content");
+  const popup = document.querySelector(".editPopup");
+  document.getElementById("editPopupTitle").value = "";
+  document.getElementById("editPopupDescription").value = "";
+  document.getElementById("editduedate").value = "";
+  document.getElementById("editduetime").value = "";
+  document.getElementById("editpriority").value = "";
+  content.style.filter = "none";
+  content.style.webkitFilter = "none";
+  popup.style.display = "none";
+}

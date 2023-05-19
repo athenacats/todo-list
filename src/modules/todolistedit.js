@@ -2,7 +2,7 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-inner-declarations */
 
-import displayHidePopup from "./displayhidepopup";
+import displayHideEditPopup from "./displayhideeditpopup";
 // import formActions from "./formActions";
 
 export default function todoListEditButton(event) {
@@ -20,21 +20,64 @@ export default function todoListEditButton(event) {
   });
 
   if (matchingTask) {
-    const newones = existingTasks.filter((el) => el.index != identity);
-    localStorage.setItem("tasks", JSON.stringify(newones));
+    // const newones = existingTasks.filter((el) => el.index != identity);
+    // localStorage.setItem("tasks", JSON.stringify(newones));
 
-    displayHidePopup();
-    const popupTitle = document.getElementById("popupTitle");
+    displayHideEditPopup();
+    const popupTitle = document.getElementById("editPopupTitle");
     popupTitle.value = matchingTask.title;
-    const popupDescription = document.getElementById("popupDescription");
+    const popupDescription = document.getElementById("editPopupDescription");
     popupDescription.value = matchingTask.description;
-    const popupPriority = document.getElementById("priority");
+    const popupPriority = document.getElementById("editpriority");
     popupPriority.value = matchingTask.priority;
-    const popupProject = document.getElementById("project");
+    const popupProject = document.getElementById("editproject");
     popupProject.value = matchingTask.project;
-    const projectDueDate = document.getElementById("dueDate");
-    projectDueDate.value = matchingTask.dueDate;
-    const projectDueTime = document.getElementById("dueTime");
-    projectDueTime.value = matchingTask.projectDueTime;
+    // const projectDueDate = document.getElementById("editdueDate");
+    // projectDueDate.value = matchingTask.dueDate;
+    // const projectDueTime = document.getElementById("editdueTime");
+    // projectDueTime.value = matchingTask.projectDueTime;
+
+    const editSubmitButton = document.getElementById("editsubmit");
+    editSubmitButton.addEventListener("click", () => {
+      console.log(50);
+      // e.preventDefault();
+      const projectDueDate = document.getElementById("editduedate");
+      console.log(projectDueDate.value);
+      const projectDueTime = document.getElementById("editduetime");
+      console.log(projectDueTime.value);
+
+      const updatedTask = {
+        ...matchingTask,
+        title: popupTitle.value,
+        description: popupDescription.value,
+        priority: popupPriority.value,
+        project: popupProject.value,
+        dueTime: projectDueTime.value,
+        dueDate: projectDueDate.value,
+      };
+
+      /* const content = document.querySelector(".content");
+      const popup = document.querySelector(".editPopup");
+      popupTitle.value = "";
+      popupDescription.value = "";
+      popupPriority.value = "";
+      popupProject.value = "";
+      // projectDueDate.value = "";
+      // projectDueTime.value = "";
+      content.style.filter = "none";
+      content.style.webkitFilter = "none";
+      popup.style.display = "none"; */
+      const id = existingTasks.indexOf(matchingTask);
+
+      // Replace the element with updatedTask
+      if (id !== -1) {
+        existingTasks[id] = updatedTask;
+      }
+      console.log(updatedTask);
+      console.log(existingTasks);
+      // existingTasks[matchingTask.index] = updatedTask;
+      localStorage.setItem("tasks", JSON.stringify(existingTasks));
+      window.location.reload();
+    });
   }
 }
