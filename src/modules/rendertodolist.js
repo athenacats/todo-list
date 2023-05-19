@@ -5,6 +5,7 @@ import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 import todoListEditButton from "./todolistedit";
 import todoListChecked from "./todolistchecked";
+import displayHideDetails from "./displayhidedetails";
 // import { removeTask } from "./localstorage";
 
 const newArray = [];
@@ -50,6 +51,7 @@ export default function renderTodoList(arr) {
     const todoListButton = document.createElement("button");
     todoListButton.setAttribute("id", "todoListButton");
     todoListButton.setAttribute("type", "button");
+    todoListButton.addEventListener("click", displayHideDetails);
     todoListButton.textContent = "DETAILS";
     todoListItem.appendChild(todoListButton);
 
