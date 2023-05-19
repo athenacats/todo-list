@@ -204,5 +204,163 @@ export default function mainContainer() {
   cancelButton.addEventListener("click", cancelForm);
   buttonBox.appendChild(cancelButton);
 
+  const editPopup = document.createElement("div");
+  editPopup.classList.add("editPopup");
+  editPopup.style.filter = "none";
+  editPopup.style.display = "none";
+  container.appendChild(editPopup);
+
+  const editPopupForm = document.createElement("form");
+  editPopupForm.setAttribute("id", "editPopupForm");
+  editPopupForm.setAttribute("name", "editPopupForm");
+  editPopup.appendChild(editPopupForm);
+
+  const editPopupTitle = document.createElement("textarea");
+  editPopupTitle.setAttribute("id", "editPopupTitle");
+  editPopupTitle.addEventListener("input", enableSubmit);
+  editPopupTitle.setAttribute("maxlength", "50");
+  editPopupTitle.setAttribute("placeholder", "Title");
+  editPopupTitle.setAttribute("name", "editPopupTitle");
+  editPopupTitle.setAttribute("required", "");
+  editPopup.appendChild(editPopupTitle);
+
+  const editPopupDescription = document.createElement("textarea");
+  editPopupDescription.setAttribute("id", "editPopupDescription");
+  editPopupDescription.setAttribute("maxlength", "140");
+  editPopupDescription.setAttribute("placeholder", "Description");
+  editPopup.appendChild(editPopupDescription);
+
+  const editControls = document.createElement("div");
+  editControls.classList.add("editControls");
+  popupForm.appendChild(editControls);
+
+  const editDateLabel = document.createElement("label");
+  editDateLabel.setAttribute("for", "editduedate");
+  editDateLabel.textContent = "Due Date";
+  editControls.appendChild(editDateLabel);
+
+  const editDatePicker = document.createElement("input");
+  editDatePicker.setAttribute("type", "date");
+  editDatePicker.setAttribute("id", "editduedate");
+  editDatePicker.addEventListener("input", enableSubmit);
+  editDatePicker.setAttribute("name", "editduedate");
+  editDatePicker.setAttribute("placeholder", "Today");
+  editDatePicker.required = true;
+  editControls.appendChild(editDatePicker);
+
+  const editTimeLabel = document.createElement("label");
+  editTimeLabel.setAttribute("for", "editduetime");
+  editTimeLabel.textContent = "Time";
+  editControls.appendChild(editTimeLabel);
+
+  const editTimePicker = document.createElement("input");
+  editTimePicker.setAttribute("type", "time");
+  editTimePicker.setAttribute("id", "editduetime");
+  editTimePicker.addEventListener("input", enableSubmit);
+  editTimePicker.setAttribute("name", "editduetime");
+  editTimePicker.setAttribute("placeholder", "now");
+  editTimePicker.setAttribute("required", "");
+  editControls.appendChild(editTimePicker);
+
+  const editPriorityLabel = document.createElement("label");
+  editPriorityLabel.setAttribute("for", "editpriority");
+  editPriorityLabel.textContent = "Priority Level";
+  editControls.appendChild(editPriorityLabel);
+
+  const editPriorityPicker = document.createElement("select");
+  editPriorityPicker.setAttribute("id", "editpriority");
+  editPriorityPicker.setAttribute("change", enableSubmit);
+  editPriorityPicker.setAttribute("name", "editpriority");
+  editPriorityPicker.required = true;
+  editControls.appendChild(editPriorityPicker);
+
+  const editOptionPlaceholder = document.createElement("option");
+  editOptionPlaceholder.setAttribute("value", "");
+  editOptionPlaceholder.setAttribute("disabled", "");
+  editOptionPlaceholder.setAttribute("selected", "");
+  editOptionPlaceholder.textContent = "Select";
+  priorityPicker.appendChild(editOptionPlaceholder);
+
+  const editOption1 = document.createElement("option");
+  editOption1.classList.add("low");
+  editOption1.setAttribute("value", "Low");
+  editOption1.textContent = "Low";
+  editOption1.style.color = "green";
+  priorityPicker.appendChild(editOption1);
+
+  const editOption2 = document.createElement("option");
+  editOption2.classList.add("medium");
+  editOption2.setAttribute("value", "Medium");
+  editOption2.textContent = "Medium";
+  editOption2.style.color = "orange";
+  priorityPicker.appendChild(editOption2);
+
+  const editOption3 = document.createElement("option");
+  editOption3.classList.add("high");
+  editOption3.setAttribute("value", "High");
+  editOption3.textContent = "High";
+  editOption3.style.color = "red";
+  priorityPicker.appendChild(editOption3);
+
+  const editProjectLabel = document.createElement("label");
+  editProjectLabel.setAttribute("for", "editproject");
+  editProjectLabel.textContent = "Project";
+  editControls.appendChild(editProjectLabel);
+
+  const editProjectPicker = document.createElement("select");
+  editProjectPicker.setAttribute("id", "editproject");
+  editProjectPicker.setAttribute("change", enableSubmit);
+  editProjectPicker.setAttribute("name", "editproject");
+  editControls.appendChild(editProjectPicker);
+
+  const editProjectPlaceholder = document.createElement("option");
+  editProjectPlaceholder.setAttribute("value", "");
+  editProjectPlaceholder.setAttribute("disabled", "");
+  editProjectPlaceholder.setAttribute("selected", "");
+  editProjectPlaceholder.textContent = "Select";
+  editProjectPicker.appendChild(editProjectPlaceholder);
+
+  const editOption4 = document.createElement("option");
+  editOption4.classList.add("personal");
+  editOption4.setAttribute("value", "personal");
+  editOption4.textContent = "Personal";
+  editProjectPicker.appendChild(editOption4);
+
+  const editOption5 = document.createElement("option");
+  editOption5.classList.add("work");
+  editOption5.setAttribute("value", "work");
+  editOption5.textContent = "Work";
+  editProjectPicker.appendChild(editOption5);
+
+  // Dynamically load options from local storage
+  existingProjects.forEach((project) => {
+    const editOption = document.createElement("option");
+    editOption.setAttribute("value", project.id);
+
+    editOption.textContent = project.projectTitle;
+    console.log(editOption.textContent);
+    editProjectPicker.appendChild(editOption);
+  });
+
+  const editButtonBox = document.createElement("div");
+  editButtonBox.classList.add("editButtonBox");
+  editPopupForm.appendChild(editButtonBox);
+
+  const editButton = document.createElement("button");
+  editButton.setAttribute("type", "submit");
+  editButton.setAttribute("id", "editsubmit");
+  editButton.textContent = "Submit";
+  editButton.addEventListener("click", () => {
+    formActions();
+  });
+  editButtonBox.appendChild(editButton);
+
+  const editCancelButton = document.createElement("button");
+  editCancelButton.setAttribute("type", "button");
+  editCancelButton.setAttribute("id", "cancel");
+  editCancelButton.textContent = "Cancel";
+  editCancelButton.addEventListener("click", cancelForm);
+  editButtonBox.appendChild(editCancelButton);
+
   projectCreationPopup();
 }
