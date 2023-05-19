@@ -377,21 +377,45 @@ export default function mainContainer() {
   todoDisplayPara.classList.add("todoDisplayPara");
   todoDisplayCard.appendChild(todoDisplayPara);
 
+  const todoDisplayControls = document.createElement("div");
+  todoDisplayControls.classList.add("todoDisplayControls");
+  todoDisplayCard.appendChild(todoDisplayControls);
+
+  const todoDisplayDateLabel = document.createElement("h5");
+  todoDisplayDateLabel.classList.add("todoDisplayDateLabel");
+  todoDisplayDateLabel.textContent = "Due Date:";
+  todoDisplayControls.appendChild(todoDisplayDateLabel);
+
   const todoDisplayDate = document.createElement("p");
   todoDisplayDate.classList.add("todoDisplayDate");
-  todoDisplayCard.appendChild(todoDisplayDate);
+  todoDisplayControls.appendChild(todoDisplayDate);
+
+  const todoDisplayTimeLabel = document.createElement("h5");
+  todoDisplayTimeLabel.classList.add("todoDisplayTimeLabel");
+  todoDisplayTimeLabel.textContent = "Time:";
+  todoDisplayControls.appendChild(todoDisplayTimeLabel);
 
   const todoDisplayTime = document.createElement("p");
   todoDisplayTime.classList.add("todoDisplayTime");
-  todoDisplayCard.appendChild(todoDisplayTime);
+  todoDisplayControls.appendChild(todoDisplayTime);
+
+  const todoDisplayPriorityLabel = document.createElement("h5");
+  todoDisplayPriorityLabel.classList.add("todoDisplayPriorityLabel");
+  todoDisplayPriorityLabel.textContent = "Priority Level:";
+  todoDisplayControls.appendChild(todoDisplayPriorityLabel);
 
   const todoDisplayPriority = document.createElement("p");
   todoDisplayPriority.classList.add("todoDisplayPriority");
-  todoDisplayCard.appendChild(todoDisplayPriority);
+  todoDisplayControls.appendChild(todoDisplayPriority);
+
+  const todoDisplayProjectLabel = document.createElement("h5");
+  todoDisplayProjectLabel.classList.add("todoDisplayProjectLabel");
+  todoDisplayProjectLabel.textContent = "Project Category:";
+  todoDisplayControls.appendChild(todoDisplayProjectLabel);
 
   const todoDisplayProject = document.createElement("p");
   todoDisplayProject.classList.add("todoDisplayProject");
-  todoDisplayCard.appendChild(todoDisplayProject);
+  todoDisplayControls.appendChild(todoDisplayProject);
 
   const closeButton = document.createElement("button");
   closeButton.classList.add("closeButton");

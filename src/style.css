@@ -276,7 +276,7 @@
 }
 .todoDisplay .todoDisplayCard {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr 2fr 1fr;
   width: 70%;
   height: 100%;
   background-color: rgb(240, 186, 195);
@@ -285,6 +285,34 @@
   border-radius: 12px;
   box-shadow: 0 0 16px 8px rgb(179, 68, 87);
   color: rgb(22, 4, 22);
+  font-size: 1rem;
+  padding: 10px;
+  overflow: hidden;
+}
+.todoDisplay .todoDisplayCard .todoDisplayControls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 10px;
+}
+.todoDisplay .todoDisplayCard .todoDisplayControls h5 {
+  font-size: 0.9rem;
+}
+.todoDisplay .todoDisplayCard .todoDisplayControls p {
+  font-size: 0.9rem;
+}
+.todoDisplay .todoDisplayCard .closeButton {
+  width: 50%;
+  outline: none;
+  border: 1px solid rgb(240, 186, 195);
+  border-radius: 16px;
+  font-family: "Lora", Georgia, serif;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  background-color: #816f72;
+  margin-left: 5px;
 }
 
 .todoListItem {

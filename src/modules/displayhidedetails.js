@@ -29,7 +29,7 @@ export default function displayHideDetails(event) {
       const projectDueDate = document.querySelector(".todoDisplayDate");
       projectDueDate.textContent = matchingTask.dueDate;
       const projectDueTime = document.querySelector(".todoDisplayTime");
-      projectDueTime.textContent = matchingTask.projectDueTime;
+      projectDueTime.textContent = matchingTask.dueTime;
     }
   });
 }
