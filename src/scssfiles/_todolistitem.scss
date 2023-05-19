@@ -4,20 +4,23 @@
   width: 90%;
   padding: 5px;
   margin: 5px auto;
-  display: flex;
+
   box-shadow: 0 0 8px $primary;
-  height: 2rem;
+  height: 3rem;
   align-items: center;
-  justify-content: space-evenly;
+
   color: $tertiary;
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr 3fr 2fr 1fr 1fr;
   #todoListButton {
     background-color: $sidePanel;
     font-family: $fonts;
-    padding: 3px 16px;
+    padding: 3px 8px;
     border-radius: 16px;
     color: $tertiary;
     border: none;
     outline: none;
+    height: 2.3rem;
   }
   svg {
     height: 90%;
