@@ -3,7 +3,7 @@ import { addTask } from "./localstorage";
 /* eslint-disable no-plusplus */
 function todoitems(
   title,
-  descriprion,
+  description,
   dueDate,
   dueTime,
   priority,
@@ -13,7 +13,7 @@ function todoitems(
 ) {
   return {
     title,
-    descriprion,
+    description,
     dueDate,
     dueTime,
     priority,
@@ -27,7 +27,7 @@ export const todos = [];
 const createTodoList = () => {
   const addTodo = (
     title,
-    descriprion,
+    description,
     dueDate,
     dueTime,
     priority,
@@ -37,7 +37,7 @@ const createTodoList = () => {
   ) => {
     const newTodo = todoitems(
       title,
-      descriprion,
+      description,
       dueDate,
       dueTime,
       priority,

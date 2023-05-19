@@ -4,7 +4,6 @@ import parseISO from "date-fns/parseISO";
 import renderTodoList from "./rendertodolist";
 import { createTodoList /* , todos */ } from "./todolist";
 import enableSubmit from "./formvalidation";
-import { existingTasks } from "./localstorage";
 
 let arr = []; // need it to be exported so it's used in rendering the inbox, today, upcoming pages
 
@@ -38,6 +37,7 @@ export default function buttonFunctions() {
     // require this so that blank todos are not attached on subsequent submits
     // do nothing
   } else {
+    const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     console.log(existingTasks);
     const filtering = existingTasks.filter((el) => el.title !== ""); // first if statement doesnt work if picking from array.. need to filter out all elements with an empty title because remember the date would still show up as invalid, bringing issues
 
