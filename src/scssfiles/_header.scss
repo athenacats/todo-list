@@ -1,19 +1,27 @@
 .header {
   background-color: $primary;
   color: $secondary;
-  display: flex;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
   justify-content: center;
   align-items: center;
   height: 4rem;
   width: 100%;
+  h1 {
+    justify-self: center;
+    text-align: center;
+    padding-left: 1.5rem;
+  }
   button {
-    justify-self: end;
+    justify-self: flex-end;
+    justify-content: flex-end;
     outline: none;
     background-color: $primary;
     border: none;
   }
   svg {
     height: 1.5rem;
+    justify-self: end;
 
     path {
       fill: $secondary;
