@@ -117,7 +117,7 @@
 .content .sidePanel button svg.feather.feather-plus-square {
   height: 100%;
 }
-.content .sidePanel button .tooltip {
+.content .sidePanel span.tooltip {
   opacity: 0;
   position: absolute;
   z-index: 999999999999;
@@ -130,7 +130,10 @@
   border-radius: 6px;
   width: 120px;
 }
-.content .sidePanel button .tooltip:hover {
+.content .sidePanel button#addButton:hover .tooltip {
+  opacity: 1;
+}
+.content .sidePanel button#addProject:hover .tooltip {
   opacity: 1;
 }
 
