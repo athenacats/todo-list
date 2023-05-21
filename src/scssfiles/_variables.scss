@@ -1,11 +1,14 @@
 $primary: rgb(179, 68, 87);
+$headerDark: rgb(145, 24, 74);
 $primaryDark: rgb(36, 6, 11);
 $sidePanelDark: rgb(14, 1, 14);
 $secondary: white;
 $tertiary: rgb(22, 4, 22);
 $sidePanel: rgb(240, 186, 195);
 $cancel: #816f72;
+$cancelDark: #5c3e4e;
 $formbackground: rgb(243, 229, 231);
+$formbackgroundDark: rgb(97, 73, 94);
 
 $fonts: "Lora", Georgia, serif;
 
@@ -19,10 +22,10 @@ $fonts: "Lora", Georgia, serif;
 }
 
 .lightTheme {
-  --primary: #{$primary};
+  --primary: #{$headerDark};
   --secondary: #{$tertiary};
   --tertiary: #{$secondary};
   --sidePanel: #{$sidePanelDark};
-  --cancel: #{$cancel};
-  --formbackground: #{$formbackground};
+  --cancel: #{$cancelDark};
+  --formbackground: #{$formbackgroundDark};
 }

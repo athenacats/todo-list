@@ -17,6 +17,10 @@
     box-shadow: 0 0 16px 8px var(--primary);
     display: grid;
     grid-template-rows: 1fr 4fr 2fr 1fr;
+    textarea#popupTitle {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
     textarea {
       background-color: var(--formbackground);
       outline: none;
@@ -27,8 +31,12 @@
       font-size: 1rem;
       padding: 10px;
       overflow: hidden;
+
       textarea:focus {
         font-size: 1.2rem;
+      }
+      textarea::placeholder {
+        color: var(--primary);
       }
     }
     .controls {
@@ -45,6 +53,15 @@
         font-family: $fonts;
         color: var(--tertiary);
         font-size: 0.8rem;
+      }
+      #duedate,
+      #duetime,
+      #priority,
+      #project {
+        background-color: var(--formbackground);
+        border: 1px var(--primary);
+        outline: none;
+        border-radius: 8px;
       }
     }
     .buttonBox {
@@ -93,13 +110,18 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
-    box-shadow: 0 0 16px 8px $primary;
+    box-shadow: 0 0 16px 8px var(--primary);
     display: grid;
     grid-template-rows: 1fr 4fr 2fr 1fr;
+    textarea#editPopupTitle {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
     textarea {
       background-color: var(--formbackground);
+
       outline: none;
-      color: $tertiary;
+      color: var(--tertiary);
       border: none;
       resize: none; //remove the diagonal lines to resize textarea
       font-family: $fonts;
@@ -124,6 +146,15 @@
         font-family: $fonts;
         color: var(--tertiary);
         font-size: 0.8rem;
+      }
+      #editduedate,
+      #editduetime,
+      #editpriority,
+      #editproject {
+        background-color: var(--formbackground);
+        border: 1px var(--primary);
+        outline: none;
+        border-radius: 8px;
       }
     }
     .editButtonBox {
@@ -175,7 +206,7 @@
     margin-right: auto;
     border-radius: 12px;
     box-shadow: 0 0 16px 8px var(--primary);
-    color: $tertiary;
+    color: var(--tertiary);
 
     padding: 10px;
     overflow: hidden;

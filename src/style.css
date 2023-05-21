@@ -15,12 +15,12 @@
 }
 
 .lightTheme {
-  --primary: rgb(179, 68, 87);
+  --primary: rgb(145, 24, 74);
   --secondary: rgb(22, 4, 22);
   --tertiary: white;
   --sidePanel: rgb(14, 1, 14);
-  --cancel: #816f72;
-  --formbackground: rgb(243, 229, 231);
+  --cancel: #5c3e4e;
+  --formbackground: rgb(97, 73, 94);
 }
 
 .header {
@@ -155,6 +155,10 @@
   display: grid;
   grid-template-rows: 1fr 4fr 2fr 1fr;
 }
+.popup form textarea#popupTitle {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 .popup form textarea {
   background-color: var(--formbackground);
   outline: none;
@@ -168,6 +172,12 @@
 }
 .popup form textarea textarea:focus {
   font-size: 1.2rem;
+}
+.popup form textarea textarea::-moz-placeholder {
+  color: var(--primary);
+}
+.popup form textarea textarea::placeholder {
+  color: var(--primary);
 }
 .popup form .controls {
   display: grid;
@@ -184,6 +194,15 @@
   font-family: "Lora", Georgia, serif;
   color: var(--tertiary);
   font-size: 0.8rem;
+}
+.popup form .controls #duedate,
+.popup form .controls #duetime,
+.popup form .controls #priority,
+.popup form .controls #project {
+  background-color: var(--formbackground);
+  border: 1px var(--primary);
+  outline: none;
+  border-radius: 8px;
 }
 .popup form .buttonBox {
   display: grid;
@@ -230,14 +249,18 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
-  box-shadow: 0 0 16px 8px rgb(179, 68, 87);
+  box-shadow: 0 0 16px 8px var(--primary);
   display: grid;
   grid-template-rows: 1fr 4fr 2fr 1fr;
+}
+.editPopup form textarea#editPopupTitle {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 .editPopup form textarea {
   background-color: var(--formbackground);
   outline: none;
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   border: none;
   resize: none;
   font-family: "Lora", Georgia, serif;
@@ -263,6 +286,15 @@
   font-family: "Lora", Georgia, serif;
   color: var(--tertiary);
   font-size: 0.8rem;
+}
+.editPopup form .editControls #editduedate,
+.editPopup form .editControls #editduetime,
+.editPopup form .editControls #editpriority,
+.editPopup form .editControls #editproject {
+  background-color: var(--formbackground);
+  border: 1px var(--primary);
+  outline: none;
+  border-radius: 8px;
 }
 .editPopup form .editButtonBox {
   display: grid;
@@ -312,7 +344,7 @@
   margin-right: auto;
   border-radius: 12px;
   box-shadow: 0 0 16px 8px var(--primary);
-  color: rgb(22, 4, 22);
+  color: var(--tertiary);
   padding: 10px;
   overflow: hidden;
 }
@@ -364,6 +396,10 @@
   display: grid;
   grid-template-columns: 1fr 5fr 2fr 3fr 2fr 1fr 1fr;
 }
+.todoListItem .todoListDueDate,
+.todoListItem .todoListDueTime {
+  text-align: center;
+}
 .todoListItem #todoListButton {
   background-color: var(--sidePanel);
   font-family: "Lora", Georgia, serif;
@@ -375,15 +411,19 @@
   height: 2.3rem;
 }
 .todoListItem svg {
-  height: 90%;
+  height: 70%;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 .todoListItem button {
   cursor: pointer;
 }
 
 .checked {
-  background-color: #816f72;
+  background-color: var(--cancel);
+  text-decoration: line-through;
 }
 .checked .todoListPriority svg {
   stroke: #160416;

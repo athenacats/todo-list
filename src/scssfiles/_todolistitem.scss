@@ -12,6 +12,10 @@
   color: var(--tertiary);
   display: grid;
   grid-template-columns: 1fr 5fr 2fr 3fr 2fr 1fr 1fr;
+  .todoListDueDate,
+  .todoListDueTime {
+    text-align: center;
+  }
   #todoListButton {
     background-color: var(--sidePanel);
     font-family: $fonts;
@@ -23,16 +27,21 @@
     height: 2.3rem;
   }
   svg {
-    height: 90%;
+    height: 70%;
     cursor: pointer;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
+
   button {
     cursor: pointer;
   }
 }
 
 .checked {
-  background-color: $cancel;
+  background-color: var(--cancel);
+  text-decoration: line-through;
   .todoListPriority svg {
     stroke: #160416;
   }
