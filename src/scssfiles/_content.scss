@@ -84,3 +84,13 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    .sidePanel {
+      display: none;
+    }
+  }
+}

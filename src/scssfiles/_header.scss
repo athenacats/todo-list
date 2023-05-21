@@ -7,6 +7,9 @@
   align-items: center;
   height: 4rem;
   width: 100%;
+  .menu {
+    display: none;
+  }
   h1 {
     justify-self: center;
     text-align: center;
@@ -26,6 +29,23 @@
 
     path {
       fill: var(--secondary);
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    grid-template-columns: 1fr 10fr 1fr;
+    .menu {
+      display: block;
+    }
+    svg {
+      height: 1.5rem;
+      justify-self: end;
+
+      path {
+        fill: var(--secondary);
+      }
     }
   }
 }

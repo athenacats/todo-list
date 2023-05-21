@@ -33,6 +33,9 @@
   height: 4rem;
   width: 100%;
 }
+.header .menu {
+  display: none;
+}
 .header h1 {
   justify-self: center;
   text-align: center;
@@ -54,6 +57,21 @@
   fill: var(--secondary);
 }
 
+@media screen and (max-width: 450px) {
+  .header {
+    grid-template-columns: 1fr 10fr 1fr;
+  }
+  .header .menu {
+    display: block;
+  }
+  .header svg {
+    height: 1.5rem;
+    justify-self: end;
+  }
+  .header svg path {
+    fill: var(--secondary);
+  }
+}
 .content {
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -137,6 +155,15 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 450px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .content .sidePanel {
+    display: none;
+  }
+}
 .popup {
   margin: auto;
   position: absolute;
