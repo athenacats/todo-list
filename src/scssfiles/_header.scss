@@ -37,14 +37,14 @@
   .header {
     grid-template-columns: 1fr 10fr 1fr;
     .menu {
-      display: block;
-    }
-    svg {
-      height: 1.5rem;
-      justify-self: end;
+      display: grid;
+      svg {
+        height: 1.5rem;
+        justify-self: center;
 
-      path {
-        fill: var(--secondary);
+        path {
+          stroke: var(--secondary);
+        }
       }
     }
   }

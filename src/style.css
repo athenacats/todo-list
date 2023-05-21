@@ -62,14 +62,14 @@
     grid-template-columns: 1fr 10fr 1fr;
   }
   .header .menu {
-    display: block;
+    display: grid;
   }
-  .header svg {
+  .header .menu svg {
     height: 1.5rem;
-    justify-self: end;
+    justify-self: center;
   }
-  .header svg path {
-    fill: var(--secondary);
+  .header .menu svg path {
+    stroke: var(--secondary);
   }
 }
 .content {
