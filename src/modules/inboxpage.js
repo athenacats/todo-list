@@ -39,6 +39,15 @@ export default function inboxPage() {
 
     renderTodoList(arr);
   }
+  const yesmobileMode = localStorage.getItem("mobile");
+  if (yesmobileMode === "enabled") {
+    const popup = document.querySelector(".sidePanel");
+    const content = document.querySelector(".mainPanel");
+    popup.style.display = "none";
+    content.style.filter = "none";
+    content.style.webkitFilter = "none";
+    localStorage.setItem("mobile", null);
+  }
   const inbox = document.querySelector(".inboxPage");
   inbox.style.display = "block";
   const upcoming = document.querySelector(".upcomingPage");

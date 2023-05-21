@@ -12,6 +12,11 @@ startPage();
 mainContainer();
 sidePanelFunction();
 
+const yesmobileMode = localStorage.getItem("mobile");
+if (yesmobileMode === "enabled") {
+  localStorage.setItem("mobile", null);
+}
+
 function getFromLocalStorage() {
   const reference = localStorage.getItem("tasks");
   // if reference exists
@@ -101,8 +106,8 @@ if (mobileMode === "enabled") {
 
 // toggles between the two themes
 mobileToggle.addEventListener("click", () => {
-  const yesmobileMode = localStorage.getItem("mobile");
-  if (yesmobileMode !== "enabled") {
+  const ifmobileMode = localStorage.getItem("mobile");
+  if (ifmobileMode !== "enabled") {
     enableMobileMode();
   } else {
     disableMobileMode();
