@@ -71,3 +71,40 @@ darkModeToggle.addEventListener("click", () => {
     disableDarkMode();
   }
 });
+
+const mobileMode = localStorage.getItem("mobile");
+const mobileToggle = document.querySelector(".menu");
+
+const enableMobileMode = () => {
+  const popup = document.querySelector(".sidePanel");
+  const content = document.querySelector(".mainPanel");
+  popup.style.display = "grid";
+  content.style.filter = "blur(20px)";
+  content.style.webkitFilter = "blur(20px)";
+  localStorage.setItem("mobile", "enabled");
+};
+
+// this disables darkmode
+const disableMobileMode = () => {
+  const popup = document.querySelector(".sidePanel");
+  const content = document.querySelector(".mainPanel");
+  popup.style.display = "none";
+  content.style.filter = "none";
+  content.style.webkitFilter = "none";
+  localStorage.setItem("mobile", null);
+};
+
+// checks if darkmode is enabled once a page loads
+if (mobileMode === "enabled") {
+  enableMobileMode();
+}
+
+// toggles between the two themes
+mobileToggle.addEventListener("click", () => {
+  const yesmobileMode = localStorage.getItem("mobile");
+  if (yesmobileMode !== "enabled") {
+    enableMobileMode();
+  } else {
+    disableMobileMode();
+  }
+});
