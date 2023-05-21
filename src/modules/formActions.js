@@ -7,6 +7,15 @@ export default function formActions() {
     (event) => {
       event.preventDefault();
       buttonFunctions();
+      const yesmobileMode = localStorage.getItem("mobile");
+      if (yesmobileMode === "enabled") {
+        const popup = document.querySelector(".sidePanel");
+        const content = document.querySelector(".mainPanel");
+        popup.style.display = "none";
+        content.style.filter = "none";
+        content.style.webkitFilter = "none";
+        localStorage.setItem("mobile", null);
+      }
       const content = document.querySelector(".content");
       const popup = document.querySelector(".popup");
       document.getElementById("popupTitle").value = "";

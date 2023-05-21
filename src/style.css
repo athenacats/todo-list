@@ -84,6 +84,7 @@
   display: grid;
   grid-template-rows: 3fr 1fr 6fr 1fr;
   color: var(--tertiary);
+  justify-content: start;
 }
 .content .sidePanel .topPanel {
   display: flex;
@@ -164,44 +165,24 @@
     display: none;
     width: 100%;
     align-items: center;
+    justify-items: start;
+    grid-template-rows: 3fr 1fr 6fr 1fr;
+    justify-content: start;
   }
-  .content .sidePanel .topPanel {
-    display: flex;
-    flex-direction: column;
-  }
-  .content .sidePanel .topPanel > * {
-    display: flex;
-    cursor: pointer;
-    padding-top: 14px;
-  }
-  .content .sidePanel .bottomPanel {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .content .sidePanel .bottomPanel > * {
-    padding-top: 20px;
-  }
-  .content .sidePanel .bottomPanel #variableProjects {
-    padding-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .content .sidePanel .bottomPanel #variableProjects button {
-    padding-top: 20px;
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-  }
-  .content .sidePanel .bottomPanel #variableProjects button svg {
-    height: 1.2rem;
-    align-self: center;
-  }
-  .content .sidePanel .bottomPanel #variableProjects button svg path {
-    stroke: var(--tertiary);
-  }
-  .content .sidePanel .bottomPanel #variableProjects button h3 {
+  .content .sidePanel > * {
+    justify-content: flex-start;
     justify-self: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  .content .sidePanel button#addButton,
+  .content .sidePanel button#addProject {
+    display: flex;
+  }
+  .content .sidePanel button#addButton svg,
+  .content .sidePanel button#addProject svg {
+    justify-self: center;
+    margin-left: 2rem;
   }
 }
 .popup {
