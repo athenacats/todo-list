@@ -14,7 +14,7 @@
   --formbackground: rgb(243, 229, 231);
 }
 
-.lightTheme {
+.darkTheme {
   --primary: rgb(145, 24, 74);
   --secondary: rgb(22, 4, 22);
   --tertiary: white;

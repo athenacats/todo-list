@@ -42,34 +42,32 @@ function getFromLocalStorage() {
 getFromLocalStorage();
 
 // set local storage for page on load
-let lightMode = localStorage.getItem("lightMode"); // name it whatever you want
-const lightModeToggle = document.querySelector("#lightModeToggle"); // accessed from button on page. on hindsight could have used class on svg
+let darkMode = localStorage.getItem("darkMode"); // name it whatever you want
+const darkModeToggle = document.querySelector("#darkModeToggle"); // accessed from button on page. on hindsight could have used class on svg
 
-// this function is to enable light mode
-const enableLightMode = () => {
-  document.body.classList.add("lightTheme");
-  localStorage.setItem("lightMode", "enabled"); // the two items in the brackets are keys. i could have named the second one anything like yes, active, etc
+// this function is to enable dark mode
+const enableDarkMode = () => {
+  document.body.classList.add("darkTheme");
+  localStorage.setItem("darkMode", "enabled"); // the two items in the brackets are keys. i could have named the second one anything like yes, active, etc
 };
 
-// this disables lightmode
-const disableLightMode = () => {
-  document.body.classList.remove("lightTheme");
-  localStorage.setItem("lightMode", null); // same here. second one could have been a string
+// this disables darkmode
+const disableDarkMode = () => {
+  document.body.classList.remove("darkTheme");
+  localStorage.setItem("darkMode", null); // same here. second one could have been a string
 };
 
-// checks if lightmode is enabled once a page loads
-if (lightMode === "enabled") {
-  enableLightMode();
-} else {
-  disableLightMode();
+// checks if darkmode is enabled once a page loads
+if (darkMode === "enabled") {
+  enableDarkMode();
 }
 
 // toggles between the two themes
-lightModeToggle.addEventListener("click", () => {
-  lightMode = localStorage.getItem("lightMode");
-  if (lightMode !== "enabled") {
-    enableLightMode();
+darkModeToggle.addEventListener("click", () => {
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "enabled") {
+    enableDarkMode();
   } else {
-    disableLightMode();
+    disableDarkMode();
   }
 });
