@@ -63,12 +63,22 @@
         color: var(--secondary);
         justify-self: flex-end;
         margin-right: 5px;
+        font-size: 1rem;
       }
       #projectCancel {
         background-color: var(--cancel);
         justify-self: flex-start;
         margin-left: 5px;
+        font-size: 1rem;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .projectPopup {
+    form {
+      width: 90%;
     }
   }
 }

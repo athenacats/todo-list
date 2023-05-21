@@ -386,6 +386,26 @@
   font-size: 1rem;
 }
 
+@media screen and (max-width: 450px) {
+  .popup {
+    top: 200px;
+  }
+  .popup form {
+    width: 90%;
+  }
+  .editPopup {
+    top: 200px;
+  }
+  .editPopup form {
+    width: 90%;
+  }
+  .todoDisplay {
+    top: 200px;
+  }
+  .todoDisplay .todoDisplayCard {
+    width: 90%;
+  }
+}
 .todoListItem {
   border-bottom: 1px solid var(--primary);
   border-radius: 16px;
@@ -432,6 +452,13 @@
   stroke: #160416;
 }
 
+/*@media screen and (max-width: 450px) {
+  .todoListItem {
+    #todoListButton {
+      font-size: 0.8rem;
+    }
+  }
+}*/
 .projectPopup {
   margin: auto;
   position: absolute;
@@ -499,13 +526,20 @@
   color: var(--secondary);
   justify-self: flex-end;
   margin-right: 5px;
+  font-size: 1rem;
 }
 .projectPopup form .projectButtonBox #projectCancel {
   background-color: var(--cancel);
   justify-self: flex-start;
   margin-left: 5px;
+  font-size: 1rem;
 }
 
+@media screen and (max-width: 450px) {
+  .projectPopup form {
+    width: 90%;
+  }
+}
 body {
   font-family: "Lora", Georgia, serif;
 }/*# sourceMappingURL=style.css.map */

@@ -246,3 +246,24 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .popup {
+    top: 200px;
+    form {
+      width: 90%;
+    }
+  }
+  .editPopup {
+    top: 200px;
+    form {
+      width: 90%;
+    }
+  }
+  .todoDisplay {
+    top: 200px;
+    .todoDisplayCard {
+      width: 90%;
+    }
+  }
+}
