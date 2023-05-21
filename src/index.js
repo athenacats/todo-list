@@ -113,3 +113,18 @@ mobileToggle.addEventListener("click", () => {
     disableMobileMode();
   }
 });
+
+// the below script is a counter against the mobile screen menu popup staying up if someone expands the screen
+function myFunction(x) {
+  if (x.matches) {
+    // If media query matches
+    const content = document.querySelector(".mainPanel");
+    content.style.filter = "none";
+    content.style.webkitFilter = "none";
+    localStorage.setItem("mobile", null);
+  }
+}
+
+const x = window.matchMedia("(min-width: 450px)");
+myFunction(x); // Call listener function at run time
+x.addEventListener("change", myFunction); // Attach listener function on state changes
