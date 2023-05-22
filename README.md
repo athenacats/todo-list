@@ -26,6 +26,8 @@
 
 This is a fully functional todo list website where one can add, modify, delete, and mark-as-done various todos. It is also possible to view the todos accordinng to those due today or in the upcoming seven days, as well as categorize them under different projects.
 
+![To-Do LIst Demonstration](./src/images/to-do-list-2.gif)
+
 ## Technologies
 
 HTML, SASS and Javascript. Additional framework used is Webpack.
@@ -41,7 +43,7 @@ The project is complete.
 
 ## Challenges Faced
 
-I found it both challenging and fun to introduce JSON in my work, and keep track of all the differenyt buttons and popups available on the website. I initially implemented everything without local storage and arrays, the later introduced arrays, and finally made everything dependent on local storage. The process might have been long, but it enabled me to learn all three implementation methods and understand the weaknesses of the former. 
+I found it both challenging and fun to introduce JSON in my work, and keep track of all the differenyt buttons and popups available on the website. I initially implemented everything without local storage and arrays, the later introduced arrays, and finally made everything dependent on local storage. The process might have been long, but it enabled me to learn all three implementation methods and understand the weaknesses of the former.
 
 This was officially the hardest and most comprehensive project that I have ever completed, and I'm proud of how it came out.
 
