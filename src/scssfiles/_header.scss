@@ -15,7 +15,7 @@
     text-align: center;
     padding-left: 1.5rem;
   }
-  button {
+  button#darkModeToggle {
     justify-self: flex-end;
     justify-content: flex-end;
     outline: none;
@@ -26,6 +26,7 @@
   svg {
     height: 1.5rem;
     justify-self: end;
+    padding-right: 20px;
 
     path {
       fill: var(--secondary);
@@ -36,14 +37,22 @@
 @media screen and (max-width: 450px) {
   .header {
     grid-template-columns: 1fr 10fr 1fr;
-    .menu {
-      display: grid;
-      svg {
-        height: 1.5rem;
+    button.menu {
+      display: block;
+      outline: none;
+      background-color: var(--primary);
+      border: none;
+      cursor: pointer;
+      & svg {
+        display: block;
+        width: 4rem;
         justify-self: center;
+        stroke: var(--secondary);
+        padding-left: 20px;
 
-        path {
+        & path {
           stroke: var(--secondary);
+          fill: var(--secondary);
         }
       }
     }
