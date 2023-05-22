@@ -1,5 +1,6 @@
 {
   "name": "todo-list",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "A To-Do List Project",
   "main": "index.js",

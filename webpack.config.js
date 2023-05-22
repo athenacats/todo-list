@@ -16,6 +16,9 @@ module.exports = {
     clean: true,
   },
   mode: "development",
+  optimization: {
+    usedExports: true,
+  },
   module: {
     rules: [
       {
