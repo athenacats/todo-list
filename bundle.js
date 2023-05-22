@@ -3594,12 +3594,12 @@ function mainContainer() {
   editProjectPicker.appendChild(editProjectPlaceholder);
   const editOption4 = document.createElement("option");
   editOption4.classList.add("personal");
-  editOption4.setAttribute("value", "personal");
+  editOption4.setAttribute("value", "Personal");
   editOption4.textContent = "Personal";
   editProjectPicker.appendChild(editOption4);
   const editOption5 = document.createElement("option");
   editOption5.classList.add("work");
-  editOption5.setAttribute("value", "work");
+  editOption5.setAttribute("value", "Work");
   editOption5.textContent = "Work";
   editProjectPicker.appendChild(editOption5);
 
