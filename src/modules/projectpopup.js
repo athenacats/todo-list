@@ -48,3 +48,20 @@ export default function projectCreationPopup() {
   cancelButton.addEventListener("click", projectCancelForm);
   buttonBox.appendChild(cancelButton);
 }
+
+/* function call() {
+  document.addEventListener("click", (e) => {
+    const projectPopup = document.querySelector(".projectPopup");
+    if (
+      projectPopup.style.display === "grid" &&
+      e.target.class !== "projectPopup"
+    ) {
+      projectPopup.style.display = "none";
+      const content = document.querySelector(".content");
+      document.getElementById("projectName").value = "";
+      content.style.filter = "none";
+      content.style.webkitFilter = "none";
+    }
+  });
+}
+call(); */
