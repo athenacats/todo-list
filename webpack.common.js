@@ -1,9 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   entry: "./src/index.js",
-  devtool: "inline-source-map",
 
   plugins: [
     new HtmlWebpackPlugin({
@@ -15,16 +15,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
-  mode: "development",
   optimization: {
     usedExports: true,
   },
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
       {
         test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
