@@ -12,6 +12,7 @@
   --sidePanel: rgb(240, 186, 195);
   --cancel: #816f72;
   --formbackground: rgb(243, 229, 231);
+  --invalid: red;
 }
 
 .darkTheme {
@@ -21,6 +22,7 @@
   --sidePanel: rgb(14, 1, 14);
   --cancel: #5c3e4e;
   --formbackground: rgb(97, 73, 94);
+  --invalid: red;
 }
 
 .header {
@@ -232,6 +234,9 @@
 }
 .popup form textarea textarea:focus {
   font-size: 1.2rem;
+}
+.popup form textarea textarea:invalid {
+  border: 1px solid var(--invalid);
 }
 .popup form textarea textarea::-moz-placeholder {
   color: var(--primary);

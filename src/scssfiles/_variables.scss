@@ -9,7 +9,7 @@ $cancel: #816f72;
 $cancelDark: #5c3e4e;
 $formbackground: rgb(243, 229, 231);
 $formbackgroundDark: rgb(97, 73, 94);
-
+$invalid: red;
 $fonts: "Lora", Georgia, serif;
 
 :root {
@@ -19,6 +19,7 @@ $fonts: "Lora", Georgia, serif;
   --sidePanel: #{$sidePanel};
   --cancel: #{$cancel};
   --formbackground: #{$formbackground};
+  --invalid: #{$invalid};
 }
 
 .darkTheme {
@@ -28,4 +29,5 @@ $fonts: "Lora", Georgia, serif;
   --sidePanel: #{$sidePanelDark};
   --cancel: #{$cancelDark};
   --formbackground: #{$formbackgroundDark};
+  --invalid: #{$invalid};
 }

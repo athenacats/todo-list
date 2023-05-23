@@ -35,6 +35,9 @@
       textarea:focus {
         font-size: 1.2rem;
       }
+      textarea:invalid {
+        border: 1px solid var(--invalid);
+      }
       textarea::placeholder {
         color: var(--primary);
       }
